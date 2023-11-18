@@ -37,7 +37,7 @@ const QRCode = () => {
                     {data}
                   </p>
                 )}
-                {qrCode && <img src={qrCode} alt="QR Code" />}
+                {qrCode && <img src={qrCode} alt="QR Code" className='w-[300px] rounded-lg' />}
               </div>
             )}
           </div>

@@ -13,21 +13,27 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold flex items-center">
           <img src='logo-rex.png' className='w-20'/>
-          <Link to="/" className="text-black no-underline font-bold rexo-logo	 hover:text-gray-300">
+          <Link to="/" className="text-black no-underline font-bold rexo-logo	 hover:text-neutral-700">
             rexo :)
           </Link>
         </div>
         <div className="flex items-center">
           {
             address && 
-            <Link to="/qr" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
+            <Link to="/qr" className="text-black no-underline mx-4 font-bold	 hover:text-neutral-700">
              my QR
             </Link>
           }
-          <Link to="/maps" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
+          {
+            address && 
+            <Link to="/my-rexes" className="text-black no-underline mx-4 font-bold	 hover:text-neutral-700">
+             my Rexes
+            </Link>
+          }
+          <Link to="/maps" className="text-black no-underline mx-4 font-bold	 hover:text-neutral-700">
             maps
           </Link> 
-          <Link to="/" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
+          <Link to="/" className="text-black no-underline mx-4 font-bold	 hover:text-neutral-700">
             list
           </Link>
           <ConnectButton.Custom>
@@ -64,7 +70,7 @@ const Navbar: React.FC = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button className='bg-black' onClick={openConnectModal} type="button">
+                  <button className='bg-black hover:text-neutral-700' onClick={openConnectModal} type="button">
                     Connect Wallet
                   </button>
                 );
@@ -84,7 +90,7 @@ const Navbar: React.FC = () => {
                     onClick={openChainModal}
                     style={{ display: 'flex', alignItems: 'center', marginRight: "15px" }}
                     type="button"
-                    className=' bg-black'
+                    className=' bg-black hover:text-neutral-700'
                   >
                     {chain.hasIcon && (
                       <div
@@ -109,7 +115,7 @@ const Navbar: React.FC = () => {
                     {chain.name}
                   </button>
 
-                  <button className='bg-black' onClick={openAccountModal} type="button">
+                  <button className='bg-black hover:text-neutral-700' onClick={openAccountModal} type="button">
                     {account.displayName}
                     {account.displayBalance
                       ? ` (${account.displayBalance})`

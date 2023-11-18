@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom'; // Assuming you're using react-router for navigation
-import Review from './review';
 import restaurantSummarys from './../../utils/index'
-import { restaurantReviewsAbi } from '../../utils/abis/restaurantReviewsAbi';
-import { useContractRead } from 'wagmi';
-import toast from 'react-hot-toast';
-import Spinner from '../Spinner';
 import { RestaurantType } from '../../utils/types';
+import Review from '../RestaurantReviews/review';
 
-const RestaurantReviews = () => {
+const RestaurantReviewSolo = ({restaurantData}: {
+    restaurantData: RestaurantType
+}) => {
+    // get restaurant data
+
+
     const reviews = [
         {
             "id": 1
@@ -29,28 +30,15 @@ const RestaurantReviews = () => {
             "id": 1
         }
     ]
-    //TODO: get restaurant id in the query param
     //const reviews = fetchReviews(restaurantId);
-    const params = useParams();
     
-    const { data, isError, isLoading } = useContractRead({
-      address: '0x',
-      abi: restaurantReviewsAbi,
-      functionName: 'restaurantById',
-      args: [params.restaurantId],
-      onError(err) {
-        toast.error('Failed to fetch restaurantById()...')
-      }
-    });
-    if (isLoading) return <Spinner/>;
-    const data2 = data as RestaurantType;
   return (
     <div>
     <div className="mt-10 px-10 py-14 flex flex-col items-center">
     <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
   <div className="p-4 space-y-2">
     <div className="flex items-center justify-between">
-      <h5 className="text-xl font-bold leading-tight text-gray-900">{data2.name}</h5>
+      <h5 className="text-xl font-bold leading-tight text-gray-900">{restaurantData.name}</h5>
       <span className="flex items-center ml-10 bg-orange-100 text-yellow-800 text-sm px-2 py-1 rounded-full">
         ⭐ GPT-4 Summary Generated
       </span>
@@ -65,7 +53,7 @@ const RestaurantReviews = () => {
                     <div className="w-1/2 p-4" style={{ overflowY: 'auto', maxHeight: '250px' }}>
                         {/* Long summary content here */}
                         <p className="text-gray-600">
-                        {restaurantSummarys[Number(params.restaurantId)].split('\n').map((line, index) => (
+                        {restaurantSummarys[Number(restaurantData.id)].split('\n').map((line, index) => (
         <React.Fragment key={index}>
           {line}
           <br />
@@ -76,7 +64,7 @@ const RestaurantReviews = () => {
                     </div>
                 </div>
     <div className="flex">
-      <span className="text-xs font-semibold text-indigo-600 bg-indigo-100 py-1 px-3 rounded-full mr-2">${data2.city}, ${data2.country}</span>
+      <span className="text-xs font-semibold text-indigo-600 bg-indigo-100 py-1 px-3 rounded-full mr-2">${restaurantData.city}, ${restaurantData.country}</span>
     
     </div>
   </div>
@@ -107,4 +95,4 @@ const RestaurantReviews = () => {
   );
 }
 
-export default RestaurantReviews;
+export default RestaurantReviewSolo;

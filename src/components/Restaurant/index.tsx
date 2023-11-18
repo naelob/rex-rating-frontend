@@ -33,9 +33,6 @@ const Restaurant = ({
           <div className='px-[70px] mb-2'>
             <p className="text-xs font-semibold text-indigo-600 bg-indigo-100 py-1 rounded-full mr-2">{data.city}, {data.country}</p>
           </div>
-          <p className="text-grey-darker text-base text-black">
-            French restaurant in Paris
-          </p>
         </div>
       </div>
       <img className="w-full" src={data.photoUrl as string} alt="Main content" />

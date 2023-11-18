@@ -19,6 +19,8 @@ import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { polygonZkEvmTestnet, mainnet } from 'wagmi/chains';
 import QRCode from './components/QrCodeClient';
+import MyRexes from './components/MyRexes';
+import QrCallback from './components/QrCallback';
 
 const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   const color = "blue";
@@ -84,7 +86,8 @@ function App() {
             <Route path="/restaurants/:restaurantId" element={<RestaurantReviews />} />
             <Route path="/maps" element={<MapComponent/> }/>
             <Route path="/qr" element={<QRCode/> }/>
-
+            <Route path="/my-rexes" element={<MyRexes/> }/>
+            <Route path="/qr-callback" element={<QrCallback/> }/>
           </Routes>
         </div>
       </Router>
