@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'; // Assuming you're using react-router f
 import Restaurant from './Restaurant';
 
 const Home: React.FC = () => {
+
     const restaurants = [
         {
             "id": "1",
