@@ -6,7 +6,8 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useEnsName } from 'wagmi';
 
 const Navbar: React.FC = () => {
-  
+  const {address} = useAccount();
+
   return (
     <nav className="navbar w-auto fixed top-5 left-40 right-40 text-white px-4 rounded-3xl">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -17,9 +18,15 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
         <div className="flex items-center">
+          {
+            address && 
+            <Link to="/qr" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
+             my QR
+            </Link>
+          }
           <Link to="/maps" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
             maps
-          </Link>
+          </Link> 
           <Link to="/" className="text-black no-underline mx-4 font-bold	 hover:text-gray-300">
             list
           </Link>
@@ -114,7 +121,7 @@ const Navbar: React.FC = () => {
           </div>
         );
       }}
-    </ConnectButton.Custom>
+          </ConnectButton.Custom>
         </div>
       </div>
     </nav>
