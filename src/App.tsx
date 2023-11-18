@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // If you're using react-router
@@ -11,25 +10,42 @@ import '@rainbow-me/rainbowkit/styles.css';
 import {
   getDefaultWallets,
   RainbowKitProvider,
-  darkTheme
+  darkTheme,
+  AvatarComponent,
 } from '@rainbow-me/rainbowkit';
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
-import {
-  mainnet,
-  polygon,
-  optimism,
-  arbitrum,
-  base,
-  zora,
-} from 'wagmi/chains';
+
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import { polygonZkEvmTestnet, mainnet } from 'wagmi/chains';
 
+const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
+  const color = "blue";
+  return ensImage ? (
+    <img
+      src={ensImage}
+      width={size}
+      height={size}
+      style={{ borderRadius: 999 }}
+    />
+  ) : (
+    <div
+      style={{
+        backgroundColor: color,
+        borderRadius: 999,
+        height: size,
+        width: size,
+      }}
+    >
+      :^)
+    </div>
+  );
+};
 
 function App() {
-  //const [count, setCount] = useState(0)
+
   const { chains, publicClient } = configureChains(
-    [mainnet, polygon, optimism, arbitrum, base, zora],
+    [mainnet, polygonZkEvmTestnet],
     [
       alchemyProvider({ apiKey: import.meta.env.VITE_ALCHEMY_ID }),
       publicProvider()
@@ -37,8 +53,8 @@ function App() {
   );
   
   const { connectors } = getDefaultWallets({
-    appName: 'My RainbowKit App',
-    projectId: 'YOUR_PROJECT_ID',
+    appName: 'istanbul-project',
+    projectId: '1b9bcae39199150637f2e49e34192885',
     chains
   });
   
@@ -50,7 +66,7 @@ function App() {
 
   return (
     <WagmiConfig config={wagmiConfig}>
-    <RainbowKitProvider theme={darkTheme({
+    <RainbowKitProvider avatar={CustomAvatar} theme={darkTheme({
         accentColor: '#000000',
         accentColorForeground: 'white',
         borderRadius: 'medium',

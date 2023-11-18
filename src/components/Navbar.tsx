@@ -3,8 +3,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount, useEnsName } from 'wagmi';
 
 const Navbar: React.FC = () => {
+  
   return (
     <nav className="navbar w-auto fixed top-5 left-40 right-40 text-white px-4 rounded-3xl">
       <div className="max-w-7xl mx-auto flex justify-between items-center">

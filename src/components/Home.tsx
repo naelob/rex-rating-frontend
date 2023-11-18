@@ -1,47 +1,43 @@
-// src/components/Navbar.tsx
-
-import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
+import React, { useEffect, useState } from 'react';
 import Restaurant from './Restaurant';
+import { useContractRead } from 'wagmi';
+import { restaurantReviewsAbi } from '../utils/abis/restaurantReviewsAbi';
+import { RestaurantType } from '../utils/types';
+import toast from 'react-hot-toast';
+import Spinner from './Spinner'; // Import Spinner component
 
 const Home: React.FC = () => {
-
-    const restaurants = [
-        {
-            "id": "1",
-            "name": "bouillon pigalle",
-            "location": "paris, france",
-            "number_reviews": 12,
-            "image": "bouillon.jpeg"
+    const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
+    const { data, isError, isLoading } = useContractRead({
+        address: '0x9B019130eE20a37A36a154bc14657B99FE2266F1',
+        abi: restaurantReviewsAbi,
+        functionName: 'getRestaurants',
+        onSuccess(data) {
+            console.log('Success', data as RestaurantType[])
+            setRestaurants(data as RestaurantType[])
         },
-        {
-            "id": "2",
-            "name": "bouillon pigalle",
-            "location": "paris, france",
-            "number_reviews": 12,
-            "image": "istanbul.jpg"
-
+        onError(error) {
+            console.log('Error', error)
+            toast.error("An error occurred while fetching data.");
         },
-        {
-            "id": "3",
-            "name": "bouillon pigalle",
-            "location": "paris, france",
-            "number_reviews": 12,
-            "image": "nyc-steak.webp"
+    })
 
-        }
-    ]
+    if (isLoading) {
+        return <Spinner />;
+    }
+
   return (
     <div>
         <div className="px-10 py-14 flex flex-col items-center">
 
-        {restaurants.map(restaurant => {
+        {
+            !restaurants ? '' : 
+            restaurants.map(restaurant => {
             return (
                 <div style={{marginBottom: 10}} key={restaurant.id}>
                     <Restaurant
-                        restaurantId={restaurant.id}
-                        image={restaurant.image}
-                        reviews={restaurant.number_reviews}
+                        restaurantId={String(restaurant.id)}
+                        data={restaurant}
                     />
                 </div>
             )
