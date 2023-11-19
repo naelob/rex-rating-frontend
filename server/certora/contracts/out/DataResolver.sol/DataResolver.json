@@ -1,0 +1,1901 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IEAS",
+          "name": "eas",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "AccessDenied",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InsufficientValue",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidEAS",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidLength",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotPayable",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "schema",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "time",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expirationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "revocationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "refUID",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "attester",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct Attestation",
+          "name": "attestation",
+          "type": "tuple"
+        }
+      ],
+      "name": "attest",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isPayable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "schema",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "time",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expirationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "revocationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "refUID",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "attester",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct Attestation[]",
+          "name": "attestations",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "multiAttest",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "schema",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "time",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expirationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "revocationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "refUID",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "attester",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct Attestation[]",
+          "name": "attestations",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "multiRevoke",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "schema",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint64",
+              "name": "time",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "expirationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "revocationTime",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "refUID",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "attester",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "bytes",
+              "name": "data",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct Attestation",
+          "name": "attestation",
+          "type": "tuple"
+        }
+      ],
+      "name": "revoke",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "bytecode": {
+    "object": "0x61010060405234801561001157600080fd5b5060405161090f38038061090f83398101604081905261003091610079565b6001608052600360a052600060c052806001600160a01b038116610067576040516341bc07ff60e11b815260040160405180910390fd5b6001600160a01b031660e052506100a9565b60006020828403121561008b57600080fd5b81516001600160a01b03811681146100a257600080fd5b9392505050565b60805160a05160c05160e05161082d6100e2600039600061040d01526000610170015260006101470152600061011e015261082d6000f3fe6080604052600436106100595760003560e01c806354fd4d501461007c57806388e5b2d9146100a757806391db0b7e146100ca578063ce46e046146100dd578063e49617e1146100f1578063e60c35051461010457600080fd5b3661007757604051631574f9f360e01b815260040160405180910390fd5b600080fd5b34801561008857600080fd5b50610091610117565b60405161009e91906105e2565b60405180910390f35b6100ba6100b5366004610661565b6101ba565b604051901515815260200161009e565b6100ba6100d8366004610661565b610289565b3480156100e957600080fd5b5060006100ba565b6100ba6100ff3660046106cd565b610348565b6100ba6101123660046106cd565b61035b565b60606101427f000000000000000000000000000000000000000000000000000000000000000061036f565b61016b7f000000000000000000000000000000000000000000000000000000000000000061036f565b6101947f000000000000000000000000000000000000000000000000000000000000000061036f565b6040516020016101a693929190610709565b604051602081830303815290604052905090565b60006101c4610402565b838281146101e55760405163251f56a160e21b815260040160405180910390fd5b3460005b8281101561027957600086868381811061020557610205610763565b9050602002013590508281111561022f5760405163044044a560e21b815260040160405180910390fd5b61025c89898481811061024457610244610763565b90506020028101906102569190610779565b50600190565b61026d576000945050505050610281565b909103906001016101e9565b506001925050505b949350505050565b6000610293610402565b838281146102b45760405163251f56a160e21b815260040160405180910390fd5b3460005b828110156102795760008686838181106102d4576102d4610763565b905060200201359050828111156102fe5760405163044044a560e21b815260040160405180910390fd5b61032b89898481811061031357610313610763565b90506020028101906103259190610779565b8261044d565b61033c576000945050505050610281565b909103906001016102b8565b6000610352610402565b60015b92915050565b6000610365610402565b610355823461044d565b6060600061037c836104e6565b600101905060008167ffffffffffffffff81111561039c5761039c61079a565b6040519080825280601f01601f1916602001820160405280156103c6576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a85049450846103d057509392505050565b336001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000161461044b57604051634ca8886760e01b815260040160405180910390fd5b565b600061045d6101208401846107b0565b905060011480156104df575060006104796101208501856107b0565b600081811061048a5761048a610763565b9050013560f81c60f81b6001600160f81b03191614806104df5750600160f81b6104b86101208501856107b0565b60008181106104c9576104c9610763565b9050013560f81c60f81b6001600160f81b031916145b9392505050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106105255772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef81000000008310610551576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc10000831061056f57662386f26fc10000830492506010015b6305f5e1008310610587576305f5e100830492506008015b612710831061059b57612710830492506004015b606483106105ad576064830492506002015b600a83106103555760010192915050565b60005b838110156105d95781810151838201526020016105c1565b50506000910152565b60208152600082518060208401526106018160408501602087016105be565b601f01601f19169190910160400192915050565b60008083601f84011261062757600080fd5b50813567ffffffffffffffff81111561063f57600080fd5b6020830191508360208260051b850101111561065a57600080fd5b9250929050565b6000806000806040858703121561067757600080fd5b843567ffffffffffffffff8082111561068f57600080fd5b61069b88838901610615565b909650945060208701359150808211156106b457600080fd5b506106c187828801610615565b95989497509550505050565b6000602082840312156106df57600080fd5b813567ffffffffffffffff8111156106f657600080fd5b820161014081850312156104df57600080fd5b6000845161071b8184602089016105be565b8083019050601760f91b808252855161073b816001850160208a016105be565b600192019182015283516107568160028401602088016105be565b0160020195945050505050565b634e487b7160e01b600052603260045260246000fd5b6000823561013e1983360301811261079057600080fd5b9190910192915050565b634e487b7160e01b600052604160045260246000fd5b6000808335601e198436030181126107c757600080fd5b83018035915067ffffffffffffffff8211156107e257600080fd5b60200191503681900382131561065a57600080fdfea2646970667358221220ac9852d5673967ae9de8459e71298f0c94c5b9e766256309e7de2d258e36057564736f6c63430008130033",
+    "sourceMap": "293:613:47:-:0;;;428:44;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;680:1:44;705:14:39;;683:1:44;729:14:39;;686:1:44;753:13:39;;465:3:47;-1:-1:-1;;;;;703:26:44;::::1;699:76;;752:12;;-1:-1:-1::0;;;752:12:44::1;;;;;;;;;;;699:76;-1:-1:-1::0;;;;;785:10:44::1;;::::0;-1:-1:-1;293:613:47;;14:304:61;98:6;151:2;139:9;130:7;126:23;122:32;119:52;;;167:1;164;157:12;119:52;193:16;;-1:-1:-1;;;;;238:31:61;;228:42;;218:70;;284:1;281;274:12;218:70;307:5;14:304;-1:-1:-1;;;14:304:61:o;:::-;293:613:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x6080604052600436106100595760003560e01c806354fd4d501461007c57806388e5b2d9146100a757806391db0b7e146100ca578063ce46e046146100dd578063e49617e1146100f1578063e60c35051461010457600080fd5b3661007757604051631574f9f360e01b815260040160405180910390fd5b600080fd5b34801561008857600080fd5b50610091610117565b60405161009e91906105e2565b60405180910390f35b6100ba6100b5366004610661565b6101ba565b604051901515815260200161009e565b6100ba6100d8366004610661565b610289565b3480156100e957600080fd5b5060006100ba565b6100ba6100ff3660046106cd565b610348565b6100ba6101123660046106cd565b61035b565b60606101427f000000000000000000000000000000000000000000000000000000000000000061036f565b61016b7f000000000000000000000000000000000000000000000000000000000000000061036f565b6101947f000000000000000000000000000000000000000000000000000000000000000061036f565b6040516020016101a693929190610709565b604051602081830303815290604052905090565b60006101c4610402565b838281146101e55760405163251f56a160e21b815260040160405180910390fd5b3460005b8281101561027957600086868381811061020557610205610763565b9050602002013590508281111561022f5760405163044044a560e21b815260040160405180910390fd5b61025c89898481811061024457610244610763565b90506020028101906102569190610779565b50600190565b61026d576000945050505050610281565b909103906001016101e9565b506001925050505b949350505050565b6000610293610402565b838281146102b45760405163251f56a160e21b815260040160405180910390fd5b3460005b828110156102795760008686838181106102d4576102d4610763565b905060200201359050828111156102fe5760405163044044a560e21b815260040160405180910390fd5b61032b89898481811061031357610313610763565b90506020028101906103259190610779565b8261044d565b61033c576000945050505050610281565b909103906001016102b8565b6000610352610402565b60015b92915050565b6000610365610402565b610355823461044d565b6060600061037c836104e6565b600101905060008167ffffffffffffffff81111561039c5761039c61079a565b6040519080825280601f01601f1916602001820160405280156103c6576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a85049450846103d057509392505050565b336001600160a01b037f0000000000000000000000000000000000000000000000000000000000000000161461044b57604051634ca8886760e01b815260040160405180910390fd5b565b600061045d6101208401846107b0565b905060011480156104df575060006104796101208501856107b0565b600081811061048a5761048a610763565b9050013560f81c60f81b6001600160f81b03191614806104df5750600160f81b6104b86101208501856107b0565b60008181106104c9576104c9610763565b9050013560f81c60f81b6001600160f81b031916145b9392505050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106105255772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef81000000008310610551576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc10000831061056f57662386f26fc10000830492506010015b6305f5e1008310610587576305f5e100830492506008015b612710831061059b57612710830492506004015b606483106105ad576064830492506002015b600a83106103555760010192915050565b60005b838110156105d95781810151838201526020016105c1565b50506000910152565b60208152600082518060208401526106018160408501602087016105be565b601f01601f19169190910160400192915050565b60008083601f84011261062757600080fd5b50813567ffffffffffffffff81111561063f57600080fd5b6020830191508360208260051b850101111561065a57600080fd5b9250929050565b6000806000806040858703121561067757600080fd5b843567ffffffffffffffff8082111561068f57600080fd5b61069b88838901610615565b909650945060208701359150808211156106b457600080fd5b506106c187828801610615565b95989497509550505050565b6000602082840312156106df57600080fd5b813567ffffffffffffffff8111156106f657600080fd5b820161014081850312156104df57600080fd5b6000845161071b8184602089016105be565b8083019050601760f91b808252855161073b816001850160208a016105be565b600192019182015283516107568160028401602088016105be565b0160020195945050505050565b634e487b7160e01b600052603260045260246000fd5b6000823561013e1983360301811261079057600080fd5b9190910192915050565b634e487b7160e01b600052604160045260246000fd5b6000808335601e198436030181126107c757600080fd5b83018035915067ffffffffffffffff8211156107e257600080fd5b60200191503681900382131561065a57600080fdfea2646970667358221220ac9852d5673967ae9de8459e71298f0c94c5b9e766256309e7de2d258e36057564736f6c63430008130033",
+    "sourceMap": "293:613:47:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1178:12:44;;-1:-1:-1;;;1178:12:44;;;;;;;;;;;293:613:47;;;;890:234:39;;;;;;;;;;;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;3128:1460:44;;;;;;:::i;:::-;;:::i;:::-;;;2077:14:61;;2070:22;2052:41;;2040:2;2025:18;3128:1460:44;1912:187:61;1437:1461:44;;;;;;:::i;:::-;;:::i;976:85::-;;;;;;;;;;-1:-1:-1;1026:4:44;976:85;;2940:146;;;;;;:::i;:::-;;:::i;1249:::-;;;;;;:::i;:::-;;:::i;890:234:39:-;932:13;1017:24;1034:6;1017:16;:24::i;:::-;1048;1065:6;1048:16;:24::i;:::-;1079:23;1096:5;1079:16;:23::i;:::-;1000:103;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;957:160;;890:234;:::o;3128:1460:44:-;3269:4;905:10;:8;:10::i;:::-;3302:12;3335:23;;::::1;3331:76;;3381:15;;-1:-1:-1::0;;;3381:15:44::1;;;;;;;;;;;3331:76;3839:9;3814:22;3859:701;3883:6;3879:1;:10;3859:701;;;4016:13;4032:6;;4039:1;4032:9;;;;;;;:::i;:::-;;;;;;;4016:25;;4067:14;4059:5;:22;4055:87;;;4108:19;;-1:-1:-1::0;;;4108:19:44::1;;;;;;;;;;;4055:87;4270:32;4279:12;;4292:1;4279:15;;;;;;;:::i;:::-;;;;;;;;;;;;:::i;:::-;-1:-1:-1::0;893:4:47;;763:141;4270:32:44::1;4265:84;;4329:5;4322:12;;;;;;;;4265:84;4512:23:::0;;::::1;::::0;1489:1:33;1485:5;3859:701:44::1;;;;4577:4;4570:11;;;;926:1;3128:1460:::0;;;;;;:::o;1437:1461::-;1578:4;905:10;:8;:10::i;:::-;1611:12;1644:23;;::::1;1640:76;;1690:15;;-1:-1:-1::0;;;1690:15:44::1;;;;;;;;;;;1640:76;2148:9;2123:22;2168:702;2192:6;2188:1;:10;2168:702;;;2325:13;2341:6;;2348:1;2341:9;;;;;;;:::i;:::-;;;;;;;2325:25;;2376:14;2368:5;:22;2364:87;;;2417:19;;-1:-1:-1::0;;;2417:19:44::1;;;;;;;;;;;2364:87;2580:32;2589:12;;2602:1;2589:15;;;;;;;:::i;:::-;;;;;;;;;;;;:::i;:::-;2606:5;2580:8;:32::i;:::-;2575:84;;2639:5;2632:12;;;;;;;;2575:84;2822:23:::0;;::::1;::::0;1489:1:33;1485:5;2168:702:44::1;;2940:146:::0;3024:4;905:10;:8;:10::i;:::-;893:4:47;3047:32:44::1;3040:39:::0;2940:146;-1:-1:-1;;2940:146:44:o;1249:::-;1333:4;905:10;:8;:10::i;:::-;1356:32:::1;1365:11;1378:9;1356:8;:32::i;447:696:26:-:0;503:13;552:14;569:17;580:5;569:10;:17::i;:::-;589:1;569:21;552:38;;604:20;638:6;627:18;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;627:18:26;-1:-1:-1;604:41:26;-1:-1:-1;765:28:26;;;781:2;765:28;820:280;-1:-1:-1;;851:5:26;-1:-1:-1;;;985:2:26;974:14;;969:30;851:5;956:44;1044:2;1035:11;;;-1:-1:-1;1064:21:26;820:280;1064:21;-1:-1:-1;1120:6:26;447:696;-1:-1:-1;;;447:696:26:o;6035:128:44:-;6082:10;-1:-1:-1;;;;;6104:4:44;6082:27;;6078:79;;6132:14;;-1:-1:-1;;;6132:14:44;;;;;;;;;;;6078:79;6035:128::o;478:279:47:-;581:4;656:16;;;;:11;:16;:::i;:::-;:23;;683:1;656:28;:94;;;;-1:-1:-1;712:5:47;689:16;;;;:11;:16;:::i;:::-;706:1;689:19;;;;;;;:::i;:::-;;;;;;;;;-1:-1:-1;;;;;689:28:47;;;:60;;;-1:-1:-1;;;;721:16:47;;;;:11;:16;:::i;:::-;738:1;721:19;;;;;;;:::i;:::-;;;;;;;;;-1:-1:-1;;;;;721:28:47;;;689:60;649:101;478:279;-1:-1:-1;;;478:279:47:o;10139:916:30:-;10192:7;;-1:-1:-1;;;10267:17:30;;10263:103;;-1:-1:-1;;;10304:17:30;;;-1:-1:-1;10349:2:30;10339:12;10263:103;10392:8;10383:5;:17;10379:103;;10429:8;10420:17;;;-1:-1:-1;10465:2:30;10455:12;10379:103;10508:8;10499:5;:17;10495:103;;10545:8;10536:17;;;-1:-1:-1;10581:2:30;10571:12;10495:103;10624:7;10615:5;:16;10611:100;;10660:7;10651:16;;;-1:-1:-1;10695:1:30;10685:11;10611:100;10737:7;10728:5;:16;10724:100;;10773:7;10764:16;;;-1:-1:-1;10808:1:30;10798:11;10724:100;10850:7;10841:5;:16;10837:100;;10886:7;10877:16;;;-1:-1:-1;10921:1:30;10911:11;10837:100;10963:7;10954:5;:16;10950:66;;11000:1;10990:11;11042:6;10139:916;-1:-1:-1;;10139:916:30:o;14:250:61:-;99:1;109:113;123:6;120:1;117:13;109:113;;;199:11;;;193:18;180:11;;;173:39;145:2;138:10;109:113;;;-1:-1:-1;;256:1:61;238:16;;231:27;14:250::o;269:396::-;418:2;407:9;400:21;381:4;450:6;444:13;493:6;488:2;477:9;473:18;466:34;509:79;581:6;576:2;565:9;561:18;556:2;548:6;544:15;509:79;:::i;:::-;649:2;628:15;-1:-1:-1;;624:29:61;609:45;;;;656:2;605:54;;269:396;-1:-1:-1;;269:396:61:o;670:387::-;753:8;763:6;817:3;810:4;802:6;798:17;794:27;784:55;;835:1;832;825:12;784:55;-1:-1:-1;858:20:61;;901:18;890:30;;887:50;;;933:1;930;923:12;887:50;970:4;962:6;958:17;946:29;;1030:3;1023:4;1013:6;1010:1;1006:14;998:6;994:27;990:38;987:47;984:67;;;1047:1;1044;1037:12;984:67;670:387;;;;;:::o;1062:845::-;1216:6;1224;1232;1240;1293:2;1281:9;1272:7;1268:23;1264:32;1261:52;;;1309:1;1306;1299:12;1261:52;1349:9;1336:23;1378:18;1419:2;1411:6;1408:14;1405:34;;;1435:1;1432;1425:12;1405:34;1474:90;1556:7;1547:6;1536:9;1532:22;1474:90;:::i;:::-;1583:8;;-1:-1:-1;1448:116:61;-1:-1:-1;1671:2:61;1656:18;;1643:32;;-1:-1:-1;1687:16:61;;;1684:36;;;1716:1;1713;1706:12;1684:36;;1755:92;1839:7;1828:8;1817:9;1813:24;1755:92;:::i;:::-;1062:845;;;;-1:-1:-1;1866:8:61;-1:-1:-1;;;;1062:845:61:o;2104:392::-;2195:6;2248:2;2236:9;2227:7;2223:23;2219:32;2216:52;;;2264:1;2261;2254:12;2216:52;2304:9;2291:23;2337:18;2329:6;2326:30;2323:50;;;2369:1;2366;2359:12;2323:50;2392:22;;2448:3;2430:16;;;2426:26;2423:46;;;2465:1;2462;2455:12;2501:999;2930:3;2968:6;2962:13;2984:66;3043:6;3038:3;3031:4;3023:6;3019:17;2984:66;:::i;:::-;3081:6;3076:3;3072:16;3059:29;;-1:-1:-1;;;3133:2:61;3126:5;3119:17;3167:6;3161:13;3183:78;3252:8;3248:1;3241:5;3237:13;3230:4;3222:6;3218:17;3183:78;:::i;:::-;3324:1;3280:20;;3316:10;;;3309:22;3356:13;;3378:75;3356:13;3440:1;3432:10;;3425:4;3413:17;;3378:75;:::i;:::-;3473:17;3492:1;3469:25;;2501:999;-1:-1:-1;;;;;2501:999:61:o;3505:127::-;3566:10;3561:3;3557:20;3554:1;3547:31;3597:4;3594:1;3587:15;3621:4;3618:1;3611:15;3637:330;3735:4;3793:11;3780:25;3887:3;3883:8;3872;3856:14;3852:29;3848:44;3828:18;3824:69;3814:97;;3907:1;3904;3897:12;3814:97;3928:33;;;;;3637:330;-1:-1:-1;;3637:330:61:o;3972:127::-;4033:10;4028:3;4024:20;4021:1;4014:31;4064:4;4061:1;4054:15;4088:4;4085:1;4078:15;4236:521;4313:4;4319:6;4379:11;4366:25;4473:2;4469:7;4458:8;4442:14;4438:29;4434:43;4414:18;4410:68;4400:96;;4492:1;4489;4482:12;4400:96;4519:33;;4571:20;;;-1:-1:-1;4614:18:61;4603:30;;4600:50;;;4646:1;4643;4636:12;4600:50;4679:4;4667:17;;-1:-1:-1;4710:14:61;4706:27;;;4696:38;;4693:58;;;4747:1;4744;4737:12",
+    "linkReferences": {},
+    "immutableReferences": {
+      "46247": [
+        {
+          "start": 286,
+          "length": 32
+        }
+      ],
+      "46249": [
+        {
+          "start": 327,
+          "length": 32
+        }
+      ],
+      "46251": [
+        {
+          "start": 368,
+          "length": 32
+        }
+      ],
+      "47751": [
+        {
+          "start": 1037,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "attest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": "e60c3505",
+    "isPayable()": "ce46e046",
+    "multiAttest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": "91db0b7e",
+    "multiRevoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": "88e5b2d9",
+    "revoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": "e49617e1",
+    "version()": "54fd4d50"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IEAS\",\"name\":\"eas\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AccessDenied\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InsufficientValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidEAS\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidLength\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"schema\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"time\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"expirationTime\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"revocationTime\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"refUID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"attester\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Attestation\",\"name\":\"attestation\",\"type\":\"tuple\"}],\"name\":\"attest\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isPayable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"schema\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"time\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"expirationTime\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"revocationTime\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"refUID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"attester\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Attestation[]\",\"name\":\"attestations\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"multiAttest\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"schema\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"time\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"expirationTime\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"revocationTime\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"refUID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"attester\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Attestation[]\",\"name\":\"attestations\",\"type\":\"tuple[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"multiRevoke\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"schema\",\"type\":\"bytes32\"},{\"internalType\":\"uint64\",\"name\":\"time\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"expirationTime\",\"type\":\"uint64\"},{\"internalType\":\"uint64\",\"name\":\"revocationTime\",\"type\":\"uint64\"},{\"internalType\":\"bytes32\",\"name\":\"refUID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"attester\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"internalType\":\"struct Attestation\",\"name\":\"attestation\",\"type\":\"tuple\"}],\"name\":\"revoke\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"attest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))\":{\"params\":{\"attestation\":\"The new attestation.\"},\"returns\":{\"_0\":\"Whether the attestation is valid.\"}},\"isPayable()\":{\"returns\":{\"_0\":\"Whether the resolver supports ETH transfers.\"}},\"multiAttest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])\":{\"params\":{\"attestations\":\"The new attestations.\",\"values\":\"Explicit ETH amounts which were sent with each attestation.\"},\"returns\":{\"_0\":\"Whether all the attestations are valid.\"}},\"multiRevoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])\":{\"params\":{\"attestations\":\"The existing attestations to be revoked.\",\"values\":\"Explicit ETH amounts which were sent with each revocation.\"},\"returns\":{\"_0\":\"Whether the attestations can be revoked.\"}},\"revoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))\":{\"params\":{\"attestation\":\"The existing attestation to be revoked.\"},\"returns\":{\"_0\":\"Whether the attestation can be revoked.\"}},\"version()\":{\"returns\":{\"_0\":\"Semver contract version as a string.\"}}},\"title\":\"DataResolver\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"attest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))\":{\"notice\":\"Processes an attestation and verifies whether it's valid.\"},\"isPayable()\":{\"notice\":\"Checks if the resolver can be sent ETH.\"},\"multiAttest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])\":{\"notice\":\"Processes multiple attestations and verifies whether they are valid.\"},\"multiRevoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])\":{\"notice\":\"Processes revocation of multiple attestation and verifies they can be revoked.\"},\"revoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))\":{\"notice\":\"Processes an attestation revocation and verifies if it can be revoked.\"},\"version()\":{\"notice\":\"Returns the full semver contract version.\"}},\"notice\":\"A sample schema resolver that checks whether an attestation data is either \\\\x00 or \\\\x01.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/resolver/examples/DataResolver.sol\":\"DataResolver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f\",\"dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n\"]},\"node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c\",\"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS\"]},\"node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7\",\"dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6\"]},\"src/Common.sol\":{\"keccak256\":\"0x957bd2e6d0d6d637f86208b135c29fbaf4412cb08e5e7a61ede16b80561bf685\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da1dc9aedbb1d4d39c46c2235918d3adfbc5741dd34a46010cf425d134e7936d\",\"dweb:/ipfs/QmWUk6bXnLaghS2riF3GTFEeURCzgYFMA5woa6AsgPwEgc\"]},\"src/IEAS.sol\":{\"keccak256\":\"0xd5a192f0bcee5372b69b0bb746c26317a2691dd10bfa52adbd08a9b723a55036\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ca836dd01016e7198a0b8e9e79d78512eb9db86dde6afd47f727f18d9a9c33a1\",\"dweb:/ipfs/QmXLTzcLUvA52qpVRUtVvj6L73cTmHk62jGsf6JErXFxD4\"]},\"src/ISchemaRegistry.sol\":{\"keccak256\":\"0x772b1ebcf3e5c93fecb53762e11bbdae75fcb667deea4ac21134fccfe78326e4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://734ea6ab1e3bea7d8e0d478731c3b8888347ec01601d66d3072398b8984e8517\",\"dweb:/ipfs/QmQHZM7USiV88SUucWV7wwCpURv98dDngtFcsEaEnFwdtp\"]},\"src/Semver.sol\":{\"keccak256\":\"0x5883c852730b00d73b10475f3b382afce8f30b89f337078ec03a66c463e048a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ab7f1cf03a19860d07100bd61a8138346c5682bced5dbc569847d35241ba1fd\",\"dweb:/ipfs/QmfTTnWbarxDZuUCCextgxrTcATy1N1XoPBmFYj2nQZJUG\"]},\"src/resolver/ISchemaResolver.sol\":{\"keccak256\":\"0xb74b64e20b90b35004750d2c78ceb114a304975d22d71bd9a2a9de0d483f0395\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0d0a30499e28e7c4ed62f2d8a88c46623c96830cc23e04ce6e9cd0cd0b11a03d\",\"dweb:/ipfs/QmYWNWu1cn7XDSaFgiMyn2L2coud3DNiGoNrNNo8QYcdyC\"]},\"src/resolver/SchemaResolver.sol\":{\"keccak256\":\"0x0c0533594956d3a7d861a68127825cbde3bc9a89979ece3aa99c3820f4c5a251\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://487e5c67f3d347f6f99b0857155aebbb015f63666ab46c57dffc72a7c6f5c06f\",\"dweb:/ipfs/QmeTmXPtumpWVxGY2NXQG3Fma73vh3Bjb6diuUHK52mpPD\"]},\"src/resolver/examples/DataResolver.sol\":{\"keccak256\":\"0xd88ca2e3c5845b6c7d0c927733944e2a09907b0a488834739e983d53ac89d69d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://22ff1a0ae710a83439fd3bbf9e3f07027cda60de276b813d798df6a5d5192406\",\"dweb:/ipfs/QmcxiiG9xZbV8N9DaoDPstmLF1uhWYBuNn2BX7UWUFMR3q\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IEAS",
+              "name": "eas",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "AccessDenied"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InsufficientValue"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidEAS"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "InvalidLength"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "NotPayable"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct Attestation",
+              "name": "attestation",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "schema",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "time",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "expirationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "revocationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "refUID",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "attester",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "attest",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "pure",
+          "type": "function",
+          "name": "isPayable",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct Attestation[]",
+              "name": "attestations",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "schema",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "time",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "expirationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "revocationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "refUID",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "attester",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "values",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "multiAttest",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct Attestation[]",
+              "name": "attestations",
+              "type": "tuple[]",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "schema",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "time",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "expirationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "revocationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "refUID",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "attester",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ]
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "values",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "multiRevoke",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "struct Attestation",
+              "name": "attestation",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "schema",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "time",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "expirationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "uint64",
+                  "name": "revocationTime",
+                  "type": "uint64"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "refUID",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "attester",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ]
+            }
+          ],
+          "stateMutability": "payable",
+          "type": "function",
+          "name": "revoke",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "version",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "payable",
+          "type": "receive"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "attest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": {
+            "params": {
+              "attestation": "The new attestation."
+            },
+            "returns": {
+              "_0": "Whether the attestation is valid."
+            }
+          },
+          "isPayable()": {
+            "returns": {
+              "_0": "Whether the resolver supports ETH transfers."
+            }
+          },
+          "multiAttest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": {
+            "params": {
+              "attestations": "The new attestations.",
+              "values": "Explicit ETH amounts which were sent with each attestation."
+            },
+            "returns": {
+              "_0": "Whether all the attestations are valid."
+            }
+          },
+          "multiRevoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": {
+            "params": {
+              "attestations": "The existing attestations to be revoked.",
+              "values": "Explicit ETH amounts which were sent with each revocation."
+            },
+            "returns": {
+              "_0": "Whether the attestations can be revoked."
+            }
+          },
+          "revoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": {
+            "params": {
+              "attestation": "The existing attestation to be revoked."
+            },
+            "returns": {
+              "_0": "Whether the attestation can be revoked."
+            }
+          },
+          "version()": {
+            "returns": {
+              "_0": "Semver contract version as a string."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "attest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": {
+            "notice": "Processes an attestation and verifies whether it's valid."
+          },
+          "isPayable()": {
+            "notice": "Checks if the resolver can be sent ETH."
+          },
+          "multiAttest((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": {
+            "notice": "Processes multiple attestations and verifies whether they are valid."
+          },
+          "multiRevoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes)[],uint256[])": {
+            "notice": "Processes revocation of multiple attestation and verifies they can be revoked."
+          },
+          "revoke((bytes32,bytes32,uint64,uint64,uint64,bytes32,address,address,bool,bytes))": {
+            "notice": "Processes an attestation revocation and verifies if it can be revoked."
+          },
+          "version()": {
+            "notice": "Returns the full semver contract version."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/resolver/examples/DataResolver.sol": "DataResolver"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+        "keccak256": "0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0",
+        "urls": [
+          "bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f",
+          "dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+        "keccak256": "0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3",
+        "urls": [
+          "bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c",
+          "dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol": {
+        "keccak256": "0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc",
+        "urls": [
+          "bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7",
+          "dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6"
+        ],
+        "license": "MIT"
+      },
+      "src/Common.sol": {
+        "keccak256": "0x957bd2e6d0d6d637f86208b135c29fbaf4412cb08e5e7a61ede16b80561bf685",
+        "urls": [
+          "bzz-raw://da1dc9aedbb1d4d39c46c2235918d3adfbc5741dd34a46010cf425d134e7936d",
+          "dweb:/ipfs/QmWUk6bXnLaghS2riF3GTFEeURCzgYFMA5woa6AsgPwEgc"
+        ],
+        "license": "MIT"
+      },
+      "src/IEAS.sol": {
+        "keccak256": "0xd5a192f0bcee5372b69b0bb746c26317a2691dd10bfa52adbd08a9b723a55036",
+        "urls": [
+          "bzz-raw://ca836dd01016e7198a0b8e9e79d78512eb9db86dde6afd47f727f18d9a9c33a1",
+          "dweb:/ipfs/QmXLTzcLUvA52qpVRUtVvj6L73cTmHk62jGsf6JErXFxD4"
+        ],
+        "license": "MIT"
+      },
+      "src/ISchemaRegistry.sol": {
+        "keccak256": "0x772b1ebcf3e5c93fecb53762e11bbdae75fcb667deea4ac21134fccfe78326e4",
+        "urls": [
+          "bzz-raw://734ea6ab1e3bea7d8e0d478731c3b8888347ec01601d66d3072398b8984e8517",
+          "dweb:/ipfs/QmQHZM7USiV88SUucWV7wwCpURv98dDngtFcsEaEnFwdtp"
+        ],
+        "license": "MIT"
+      },
+      "src/Semver.sol": {
+        "keccak256": "0x5883c852730b00d73b10475f3b382afce8f30b89f337078ec03a66c463e048a8",
+        "urls": [
+          "bzz-raw://0ab7f1cf03a19860d07100bd61a8138346c5682bced5dbc569847d35241ba1fd",
+          "dweb:/ipfs/QmfTTnWbarxDZuUCCextgxrTcATy1N1XoPBmFYj2nQZJUG"
+        ],
+        "license": "MIT"
+      },
+      "src/resolver/ISchemaResolver.sol": {
+        "keccak256": "0xb74b64e20b90b35004750d2c78ceb114a304975d22d71bd9a2a9de0d483f0395",
+        "urls": [
+          "bzz-raw://0d0a30499e28e7c4ed62f2d8a88c46623c96830cc23e04ce6e9cd0cd0b11a03d",
+          "dweb:/ipfs/QmYWNWu1cn7XDSaFgiMyn2L2coud3DNiGoNrNNo8QYcdyC"
+        ],
+        "license": "MIT"
+      },
+      "src/resolver/SchemaResolver.sol": {
+        "keccak256": "0x0c0533594956d3a7d861a68127825cbde3bc9a89979ece3aa99c3820f4c5a251",
+        "urls": [
+          "bzz-raw://487e5c67f3d347f6f99b0857155aebbb015f63666ab46c57dffc72a7c6f5c06f",
+          "dweb:/ipfs/QmeTmXPtumpWVxGY2NXQG3Fma73vh3Bjb6diuUHK52mpPD"
+        ],
+        "license": "MIT"
+      },
+      "src/resolver/examples/DataResolver.sol": {
+        "keccak256": "0xd88ca2e3c5845b6c7d0c927733944e2a09907b0a488834739e983d53ac89d69d",
+        "urls": [
+          "bzz-raw://22ff1a0ae710a83439fd3bbf9e3f07027cda60de276b813d798df6a5d5192406",
+          "dweb:/ipfs/QmcxiiG9xZbV8N9DaoDPstmLF1uhWYBuNn2BX7UWUFMR3q"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/resolver/examples/DataResolver.sol",
+    "id": 48288,
+    "exportedSymbols": {
+      "Attestation": [
+        43248
+      ],
+      "DataResolver": [
+        48287
+      ],
+      "IEAS": [
+        45511
+      ],
+      "SchemaResolver": [
+        48052
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:874:47",
+    "nodes": [
+      {
+        "id": 48215,
+        "nodeType": "PragmaDirective",
+        "src": "33:23:47",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".19"
+        ]
+      },
+      {
+        "id": 48217,
+        "nodeType": "ImportDirective",
+        "src": "58:55:47",
+        "nodes": [],
+        "absolutePath": "src/resolver/SchemaResolver.sol",
+        "file": "../SchemaResolver.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 48288,
+        "sourceUnit": 48053,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 48216,
+              "name": "SchemaResolver",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 48052,
+              "src": "67:14:47",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 48220,
+        "nodeType": "ImportDirective",
+        "src": "115:51:47",
+        "nodes": [],
+        "absolutePath": "src/IEAS.sol",
+        "file": "../../IEAS.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 48288,
+        "sourceUnit": 45512,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 48218,
+              "name": "IEAS",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45511,
+              "src": "124:4:47",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 48219,
+              "name": "Attestation",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 43248,
+              "src": "130:11:47",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 48287,
+        "nodeType": "ContractDefinition",
+        "src": "293:613:47",
+        "nodes": [
+          {
+            "id": 48226,
+            "nodeType": "VariableDeclaration",
+            "src": "339:38:47",
+            "nodes": [],
+            "constant": true,
+            "mutability": "constant",
+            "name": "DATA1",
+            "nameLocation": "363:5:47",
+            "scope": 48287,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes1",
+              "typeString": "bytes1"
+            },
+            "typeName": {
+              "id": 48224,
+              "name": "bytes1",
+              "nodeType": "ElementaryTypeName",
+              "src": "339:6:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes1",
+                "typeString": "bytes1"
+              }
+            },
+            "value": {
+              "hexValue": "00",
+              "id": 48225,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "371:6:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_bc36789e7a1e281436464229828f817d6612f7b477d66591ff96a9e064bcc98a",
+                "typeString": "literal_string hex\"00\""
+              },
+              "value": "\u0000"
+            },
+            "visibility": "private"
+          },
+          {
+            "id": 48229,
+            "nodeType": "VariableDeclaration",
+            "src": "383:38:47",
+            "nodes": [],
+            "constant": true,
+            "mutability": "constant",
+            "name": "DATA2",
+            "nameLocation": "407:5:47",
+            "scope": 48287,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes1",
+              "typeString": "bytes1"
+            },
+            "typeName": {
+              "id": 48227,
+              "name": "bytes1",
+              "nodeType": "ElementaryTypeName",
+              "src": "383:6:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes1",
+                "typeString": "bytes1"
+              }
+            },
+            "value": {
+              "hexValue": "01",
+              "id": 48228,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "415:6:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_5fe7f977e71dba2ea1a68e21057beebb9be2ac30c6410aa38d4f3fbe41dcffd2",
+                "typeString": "literal_string hex\"01\""
+              },
+              "value": "\u0001"
+            },
+            "visibility": "private"
+          },
+          {
+            "id": 48239,
+            "nodeType": "FunctionDefinition",
+            "src": "428:44:47",
+            "nodes": [],
+            "body": {
+              "id": 48238,
+              "nodeType": "Block",
+              "src": "470:2:47",
+              "nodes": [],
+              "statements": []
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 48235,
+                    "name": "eas",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 48232,
+                    "src": "465:3:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IEAS_$45511",
+                      "typeString": "contract IEAS"
+                    }
+                  }
+                ],
+                "id": 48236,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 48234,
+                  "name": "SchemaResolver",
+                  "nameLocations": [
+                    "450:14:47"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 48052,
+                  "src": "450:14:47"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "450:19:47"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 48233,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48232,
+                  "mutability": "mutable",
+                  "name": "eas",
+                  "nameLocation": "445:3:47",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48239,
+                  "src": "440:8:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IEAS_$45511",
+                    "typeString": "contract IEAS"
+                  },
+                  "typeName": {
+                    "id": 48231,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 48230,
+                      "name": "IEAS",
+                      "nameLocations": [
+                        "440:4:47"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 45511,
+                      "src": "440:4:47"
+                    },
+                    "referencedDeclaration": 45511,
+                    "src": "440:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IEAS_$45511",
+                      "typeString": "contract IEAS"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "439:10:47"
+            },
+            "returnParameters": {
+              "id": 48237,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "470:0:47"
+            },
+            "scope": 48287,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 48272,
+            "nodeType": "FunctionDefinition",
+            "src": "478:279:47",
+            "nodes": [],
+            "body": {
+              "id": 48271,
+              "nodeType": "Block",
+              "src": "587:170:47",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 48269,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "commonType": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "id": 48254,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "expression": {
+                          "expression": {
+                            "id": 48250,
+                            "name": "attestation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 48242,
+                            "src": "656:11:47",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Attestation_$43248_calldata_ptr",
+                              "typeString": "struct Attestation calldata"
+                            }
+                          },
+                          "id": 48251,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberLocation": "668:4:47",
+                          "memberName": "data",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 43247,
+                          "src": "656:16:47",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_calldata_ptr",
+                            "typeString": "bytes calldata"
+                          }
+                        },
+                        "id": 48252,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "673:6:47",
+                        "memberName": "length",
+                        "nodeType": "MemberAccess",
+                        "src": "656:23:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "==",
+                      "rightExpression": {
+                        "hexValue": "31",
+                        "id": 48253,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "683:1:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        "value": "1"
+                      },
+                      "src": "656:28:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "&&",
+                    "rightExpression": {
+                      "components": [
+                        {
+                          "commonType": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "id": 48267,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            },
+                            "id": 48260,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "baseExpression": {
+                                "expression": {
+                                  "id": 48255,
+                                  "name": "attestation",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 48242,
+                                  "src": "689:11:47",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Attestation_$43248_calldata_ptr",
+                                    "typeString": "struct Attestation calldata"
+                                  }
+                                },
+                                "id": 48256,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "701:4:47",
+                                "memberName": "data",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 43247,
+                                "src": "689:16:47",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bytes_calldata_ptr",
+                                  "typeString": "bytes calldata"
+                                }
+                              },
+                              "id": 48258,
+                              "indexExpression": {
+                                "hexValue": "30",
+                                "id": 48257,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "706:1:47",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                "value": "0"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "689:19:47",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes1",
+                                "typeString": "bytes1"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "==",
+                            "rightExpression": {
+                              "id": 48259,
+                              "name": "DATA1",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 48226,
+                              "src": "712:5:47",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes1",
+                                "typeString": "bytes1"
+                              }
+                            },
+                            "src": "689:28:47",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "||",
+                          "rightExpression": {
+                            "commonType": {
+                              "typeIdentifier": "t_bytes1",
+                              "typeString": "bytes1"
+                            },
+                            "id": 48266,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "leftExpression": {
+                              "baseExpression": {
+                                "expression": {
+                                  "id": 48261,
+                                  "name": "attestation",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 48242,
+                                  "src": "721:11:47",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_Attestation_$43248_calldata_ptr",
+                                    "typeString": "struct Attestation calldata"
+                                  }
+                                },
+                                "id": 48262,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "memberLocation": "733:4:47",
+                                "memberName": "data",
+                                "nodeType": "MemberAccess",
+                                "referencedDeclaration": 43247,
+                                "src": "721:16:47",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bytes_calldata_ptr",
+                                  "typeString": "bytes calldata"
+                                }
+                              },
+                              "id": 48264,
+                              "indexExpression": {
+                                "hexValue": "30",
+                                "id": 48263,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "738:1:47",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                "value": "0"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "721:19:47",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes1",
+                                "typeString": "bytes1"
+                              }
+                            },
+                            "nodeType": "BinaryOperation",
+                            "operator": "==",
+                            "rightExpression": {
+                              "id": 48265,
+                              "name": "DATA2",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 48229,
+                              "src": "744:5:47",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes1",
+                                "typeString": "bytes1"
+                              }
+                            },
+                            "src": "721:28:47",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "src": "689:60:47",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        }
+                      ],
+                      "id": 48268,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "TupleExpression",
+                      "src": "688:62:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "656:94:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 48249,
+                  "id": 48270,
+                  "nodeType": "Return",
+                  "src": "649:101:47"
+                }
+              ]
+            },
+            "baseFunctions": [
+              48023
+            ],
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onAttest",
+            "nameLocation": "487:8:47",
+            "overrides": {
+              "id": 48246,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "563:8:47"
+            },
+            "parameters": {
+              "id": 48245,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48242,
+                  "mutability": "mutable",
+                  "name": "attestation",
+                  "nameLocation": "517:11:47",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48272,
+                  "src": "496:32:47",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Attestation_$43248_calldata_ptr",
+                    "typeString": "struct Attestation"
+                  },
+                  "typeName": {
+                    "id": 48241,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 48240,
+                      "name": "Attestation",
+                      "nameLocations": [
+                        "496:11:47"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 43248,
+                      "src": "496:11:47"
+                    },
+                    "referencedDeclaration": 43248,
+                    "src": "496:11:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Attestation_$43248_storage_ptr",
+                      "typeString": "struct Attestation"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 48244,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48272,
+                  "src": "530:7:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 48243,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "530:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "495:53:47"
+            },
+            "returnParameters": {
+              "id": 48249,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48248,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48272,
+                  "src": "581:4:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 48247,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "581:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "580:6:47"
+            },
+            "scope": 48287,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "id": 48286,
+            "nodeType": "FunctionDefinition",
+            "src": "763:141:47",
+            "nodes": [],
+            "body": {
+              "id": 48285,
+              "nodeType": "Block",
+              "src": "876:28:47",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "hexValue": "74727565",
+                    "id": 48283,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "893:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 48282,
+                  "id": 48284,
+                  "nodeType": "Return",
+                  "src": "886:11:47"
+                }
+              ]
+            },
+            "baseFunctions": [
+              48034
+            ],
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onRevoke",
+            "nameLocation": "772:8:47",
+            "overrides": {
+              "id": 48279,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "852:8:47"
+            },
+            "parameters": {
+              "id": 48278,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48275,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48286,
+                  "src": "781:20:47",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Attestation_$43248_calldata_ptr",
+                    "typeString": "struct Attestation"
+                  },
+                  "typeName": {
+                    "id": 48274,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 48273,
+                      "name": "Attestation",
+                      "nameLocations": [
+                        "781:11:47"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 43248,
+                      "src": "781:11:47"
+                    },
+                    "referencedDeclaration": 43248,
+                    "src": "781:11:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Attestation_$43248_storage_ptr",
+                      "typeString": "struct Attestation"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 48277,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48286,
+                  "src": "819:7:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 48276,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "819:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "780:57:47"
+            },
+            "returnParameters": {
+              "id": 48282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 48281,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 48286,
+                  "src": "870:4:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 48280,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:4:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "869:6:47"
+            },
+            "scope": 48287,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 48222,
+              "name": "SchemaResolver",
+              "nameLocations": [
+                "318:14:47"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 48052,
+              "src": "318:14:47"
+            },
+            "id": 48223,
+            "nodeType": "InheritanceSpecifier",
+            "src": "318:14:47"
+          }
+        ],
+        "canonicalName": "DataResolver",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 48221,
+          "nodeType": "StructuredDocumentation",
+          "src": "168:125:47",
+          "text": "@title DataResolver\n @notice A sample schema resolver that checks whether an attestation data is either \\x00 or \\x01."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          48287,
+          48052,
+          46303,
+          47725
+        ],
+        "name": "DataResolver",
+        "nameLocation": "302:12:47",
+        "scope": 48288,
+        "usedErrors": [
+          43210,
+          43214,
+          43216,
+          47746,
+          47748
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 47
+}

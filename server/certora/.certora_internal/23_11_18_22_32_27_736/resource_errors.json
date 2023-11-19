@@ -1,0 +1,17 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (restaurants.spec:31:25): Syntax error: unexpected token near `<`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (restaurants.spec:32:19): Syntax error: unexpected token near `>=`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

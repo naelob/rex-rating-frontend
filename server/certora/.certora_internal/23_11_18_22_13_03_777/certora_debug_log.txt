@@ -1,0 +1,36 @@
+Saving last configuration file to .certora_internal/23_11_18_22_13_03_777/run.conf
+There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
+Creating dir /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config
+In /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec, found the imports: []
+copying spec file /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec to /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_sources/.0_restaurants.spec.spec
+In /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec, found the imports: []
+writing /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_verify.json
+writing /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_verify.cvl1.json
+Path to typechecker is /home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.jar
+running ['java', '-jar', '/home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777']
+
+building file contracts/src/RestaurantReviews.sol
+Running cmd /usr/bin/solc -o "/home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config/RestaurantReviews.sol_0/" --overwrite --allow-paths "/home/kkameleon/draft/ethglobal/ethGlobal/certora/contracts","node_modules/@openzeppelin/contracts",. --standard-json
+stdout, stderr = /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config/RestaurantReviews.sol_0.standard.json.stdout, /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config/RestaurantReviews.sol_0.standard.json.stderr
+Exitcode 0
+Solc run /usr/bin/solc -o "/home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config/RestaurantReviews.sol_0/" --overwrite --allow-paths "/home/kkameleon/draft/ethglobal/ethGlobal/certora/contracts","node_modules/@openzeppelin/contracts",. --standard-json time: 0.022
+reading standard json data from /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_22_13_03_777/.certora_config/RestaurantReviews.sol_0.standard.json.stdout
+build failed
+Failure traceback: 
+Shared.certoraUtils.CertoraUserInputError: /usr/bin/solc had an error:
+TypeError: Member "hasAttestation" not found or not visible after argument-dependent lookup in contract EAS.
+  --> /home/kkameleon/draft/ethglobal/ethGlobal/certora/contracts/src/RestaurantReviews.sol:74:17:
+   |
+74 |         require(eas.hasAttestation(restaurants[_restaurantId].ethAddress, _userAddress), "User has not visited the restaurant");
+   |                 ^^^^^^^^^^^^^^^^^^
+
+
+Encountered an error running Certora Prover:
+/usr/bin/solc had an error:
+TypeError: Member "hasAttestation" not found or not visible after argument-dependent lookup in contract EAS.
+  --> /home/kkameleon/draft/ethglobal/ethGlobal/certora/contracts/src/RestaurantReviews.sol:74:17:
+   |
+74 |         require(eas.hasAttestation(restaurants[_restaurantId].ethAddress, _userAddress), "User has not visited the restaurant");
+   |                 ^^^^^^^^^^^^^^^^^^
+
+

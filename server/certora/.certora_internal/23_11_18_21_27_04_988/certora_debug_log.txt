@@ -1,0 +1,26 @@
+Saving last configuration file to .certora_internal/23_11_18_21_27_04_988/run.conf
+There is no TAC file. Going to script EVMVerifier/certoraBuild.py to main_with_args()
+Creating dir /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988/.certora_config
+In /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec, found the imports: []
+copying spec file /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec to /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988/.certora_sources/.0_restaurants.spec.spec
+In /home/kkameleon/draft/ethglobal/ethGlobal/certora/certora/spec/restaurants.spec, found the imports: []
+writing /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988/.certora_verify.json
+writing /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988/.certora_verify.cvl1.json
+Path to typechecker is /home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.jar
+running ['java', '-jar', '/home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.jar', '-buildDirectory', '/home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988']
+Failed to compile spec file in /home/kkameleon/draft/ethglobal/ethGlobal/certora/.certora_internal/23_11_18_21_27_04_988
+Found errors
+[main] ERROR ALWAYS - Error in spec file (restaurants.spec:44:5): Syntax error: unexpected token near `require`
+[main] ERROR ALWAYS - Error in spec file (restaurants.spec:48:5): Syntax error: unexpected token near `require`
+Path to typechecker is /home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.3.6.5.jar
+running ['java', '-jar', '/home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.3.6.5.jar', '-v', '.certora_internal/23_11_18_21_27_04_988/.certora_verify.cvl1.json', '-d', '.certora_internal/23_11_18_21_27_04_988']
+Execution of command "java -jar /home/kkameleon/.local/lib/python3.11/site-packages/certora_jars/Typechecker.3.6.5.jar -v .certora_internal/23_11_18_21_27_04_988/.certora_verify.cvl1.json -d .certora_internal/23_11_18_21_27_04_988" terminated with exitcode 1.
+[main] ERROR ALWAYS - certora/spec/restaurants.spec:4:5: Syntax error: unexpected token near FUNCTION(function)
+[main] ERROR ALWAYS - certora/spec/restaurants.spec:4:5: Couldn't repair and continue parse unexpected token near FUNCTION(function)
+[main] ERROR ALWAYS - CVL parser failed with exception. Exception message: "Failed to parse certora/spec/restaurants.spec. Exiting."
+spec.CVLAstBuilder$CVLParsingException: java.lang.Exception: Failed to parse certora/spec/restaurants.spec. Exiting.
+build failed
+Failure traceback: 
+Shared.certoraUtils.CertoraUserInputError: CVL specification syntax check failed
+Encountered an error running Certora Prover:
+CVL specification syntax check failed

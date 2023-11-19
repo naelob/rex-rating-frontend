@@ -1,0 +1,17 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (restaurants.spec:44:5): Syntax error: unexpected token near `assert`",
+                    "location": []
+                },
+                {
+                    "message": "Error in spec file (restaurants.spec:48:5): Syntax error: unexpected token near `assert`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

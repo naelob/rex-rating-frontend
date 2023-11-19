@@ -1,0 +1,21 @@
+{
+    "CLI_version": "4.13.1",
+    "branch": "main",
+    "conf": {
+        "files": [
+            "contracts/src/RestaurantReviews.sol"
+        ],
+        "msg": "RestaurantRules",
+        "process": "emv",
+        "verify": "RestaurantReviews:certora/spec/restaurants.spec"
+    },
+    "cwd_relative": "certora",
+    "dirty": true,
+    "origin": "git@github.com:Kkameleon/ethGlobal.git",
+    "raw_args": [
+        "/home/kkameleon/.local/bin/certoraRun",
+        "./certora/conf/rexo.conf"
+    ],
+    "revision": "66de09d1536d5581241a91822b403ef064e10b81",
+    "timestamp": "1700323943.985173"
+}

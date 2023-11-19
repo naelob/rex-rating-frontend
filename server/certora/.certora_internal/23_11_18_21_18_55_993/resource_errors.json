@@ -1,0 +1,13 @@
+{
+    "topics": [
+        {
+            "name": "type_check",
+            "messages": [
+                {
+                    "message": "Error in spec file (restaurants.spec:39:6): Syntax error: unexpected token near `after`",
+                    "location": []
+                }
+            ]
+        }
+    ]
+}

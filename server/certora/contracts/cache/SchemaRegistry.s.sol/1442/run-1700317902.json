@@ -1,0 +1,10 @@
+{
+  "transactions": [
+    {
+      "rpc": "https://rpc.public.zkevm-test.net"
+    },
+    {
+      "rpc": "https://rpc.public.zkevm-test.net"
+    }
+  ]
+}

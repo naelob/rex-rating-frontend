@@ -1,0 +1,8 @@
+{
+    "importFilesToOrigRelpaths": {},
+    "primary_contract": "RestaurantReviews",
+    "specfile": "certora/spec/restaurants.spec",
+    "specfileOrigRelpath": "certora/spec/restaurants.spec",
+    "specfilesToImportDecls": {},
+    "type": "spec"
+}
