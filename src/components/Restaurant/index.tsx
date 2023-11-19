@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
 import { useNavigate } from 'react-router-dom';
 import { RestaurantType } from '../../utils/types';
-import restaurantSummarys from '../../utils';
+import {restaurantSummarys} from '../../utils';
+import useReviewsPerRestaurant from '../hooks/useReviewsPerRestaurant';
 
 const Restaurant = ({
   restaurantId ,
@@ -16,6 +16,8 @@ const Restaurant = ({
     const handleClick = () => {
         navigate(`/restaurants/${restaurantId}`);
     };
+    const { reviewCounts, isError, isLoading } = useReviewsPerRestaurant();
+    //console.log(reviewCounts[restaurantId]);
     
   return (
     <div 
@@ -55,7 +57,7 @@ const Restaurant = ({
             Number of reviews</span>
         </span>
         <span className="flex items-center bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded mr-2">
-          12
+          {reviewCounts[restaurantId]}
           <img className="w-3 ml-1" src="coeur.svg" alt="like"/>
         </span>
 

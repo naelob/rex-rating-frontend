@@ -1,4 +1,4 @@
-const restaurantSummarys = [
+export const restaurantSummarys = [
     "😊 Good feedback: Customers praise the delicious food, especially the pottery meat, and highlight the exceptional service and atmosphere.\n 😐 Mixed feedback: Some reviewers mention the food being slightly above average in terms of pricing and express disappointment with reheated dishes, portion sizes, and a lackluster atmosphere. \n😞 Bad feedback: A few customers find the food mediocre, noting small portions for the high prices and mentioning issues with the cocktails and authenticity of the Turkish cuisine.",
     "😊 Good feedback: Customers appreciate the diverse menu with options for both vegetarians and non-vegetarians, praising dishes like vegetable couscous and chicken soup, along with attentive service from waiters like Polat and Deniz. \n😐 Mixed feedback: Some reviewers mention higher prices and recommend checking prices carefully, while others have mixed experiences with the food quality. \n😞 Bad feedback: A negative review highlights significantly higher prices for similar dishes compared to other restaurants and mentions issues with food quality, including blood in meatballs and unpleasant chicken.",
     "😊 Good feedback: Customers appreciate the large menu selection, generous portions, delightful service, and the cute ambiance, making it a recommended choice for dining in Istanbul.\n 😐 Mixed feedback: One review mentions higher prices compared to average Turkish restaurants and a simple interior, while another notes a slightly dry salmon dish and slow service. \n😞 Bad feedback: A negative review highlights disappointment with the pricing, a simple street view, and food not being particularly special.",
@@ -15,4 +15,12 @@ const restaurantSummarys = [
     "😊 Good feedback: Customers praise the authentic Turkish coffee experience at Fazil Bey's. The freshly brewed coffee, particularly the Turkish coffee, is highly recommended. The cozy atmosphere and outdoor seating are appreciated.\n 😐 No specific mixed feedback is mentioned in the available reviews. Customers seem to have had consistently positive experiences with the coffee and atmosphere.\n 😞 There is no specific negative feedback mentioned in the available reviews."
 ];
 
-export default restaurantSummarys;
+export function formatAddress(address: `0x${string}`) {
+    // Ensure the address is a string and has the expected length
+    if (typeof address === 'string' && address.length >= 42) {
+      // Get the first 6 characters (including '0x') and the last 4 characters
+      return `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+    }
+    return address;
+}
+

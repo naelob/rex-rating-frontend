@@ -9,7 +9,7 @@ import Spinner from './Spinner'; // Import Spinner component
 const Home: React.FC = () => {
     const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
     const { data, isError, isLoading } = useContractRead({
-        address: '0x9B019130eE20a37A36a154bc14657B99FE2266F1',
+        address: '0x9377942972FFEe975a57bFd90098ce1f8650Bec7',
         abi: restaurantReviewsAbi,
         functionName: 'getRestaurants',
         onSuccess(data) {
@@ -29,7 +29,6 @@ const Home: React.FC = () => {
   return (
     <div>
         <div className="px-10 py-14 flex flex-col items-center">
-
         {
             !restaurants ? '' : 
             restaurants.map(restaurant => {

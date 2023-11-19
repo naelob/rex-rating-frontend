@@ -4,9 +4,17 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount, useEnsName } from 'wagmi';
+import {
+  SignInWithLens, Theme, Size
+} from '@lens-protocol/widgets-react'
 
 const Navbar: React.FC = () => {
   const {address} = useAccount();
+
+  async function onSignIn(tokens, profile) {
+    console.log('tokens: ', tokens)
+    console.log('profile: ', profile)
+  }
 
   return (
     <nav className="navbar w-auto fixed top-5 left-40 right-40 text-white px-4 rounded-3xl">
@@ -30,6 +38,9 @@ const Navbar: React.FC = () => {
              my Rexes
             </Link>
           }
+          {/*<SignInWithLens
+            onSignIn={onSignIn}
+          />*/}
           <Link to="/maps" className="text-black no-underline mx-4 font-bold	 hover:text-neutral-700">
             maps
           </Link> 

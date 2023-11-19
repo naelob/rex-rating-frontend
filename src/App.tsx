@@ -21,6 +21,7 @@ import { polygonZkEvmTestnet, mainnet } from 'wagmi/chains';
 import QRCode from './components/QrCodeClient';
 import MyRexes from './components/MyRexes';
 import QrCallback from './components/QrCallback';
+import LensShare from './components/LensShare';
 
 const CustomAvatar: AvatarComponent = ({ address, ensImage, size }) => {
   const color = "blue";
@@ -88,6 +89,7 @@ function App() {
             <Route path="/qr" element={<QRCode/> }/>
             <Route path="/my-rexes" element={<MyRexes/> }/>
             <Route path="/qr-callback" element={<QrCallback/> }/>
+            <Route path="/lens-share" element={<LensShare restaurantName='pigalle istanbul'/> }/>
           </Routes>
         </div>
       </Router>

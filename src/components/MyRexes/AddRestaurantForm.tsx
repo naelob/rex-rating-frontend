@@ -24,7 +24,7 @@ async function getCoordinates(address: string): Promise<{ lat: string, lng: stri
 
 export const AddRestaurantForm = () => {
     const { data, isLoading, isSuccess, write } = useContractWrite({
-        address: '0x',
+        address: '0x9377942972FFEe975a57bFd90098ce1f8650Bec7',
         abi: restaurantReviewsAbi,
         functionName: 'addRestaurant',
     })
@@ -32,9 +32,9 @@ export const AddRestaurantForm = () => {
       initialValues: {
         name: '',
         city: '',
-        photo_url: '',
         address: '',
         country: '',
+        photo_url: '',
       },
       validationSchema: Yup.object({
         name: Yup.string().required('Required'),
@@ -117,8 +117,8 @@ export const AddRestaurantForm = () => {
   
         <label htmlFor="photo-url" className="block text-sm font-medium text-gray-700 mt-3">Image</label>
         <input
-          id="photo-url"
-          name="photo-url"
+          id="photo_url"
+          name="photo_url"
           type="text"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}

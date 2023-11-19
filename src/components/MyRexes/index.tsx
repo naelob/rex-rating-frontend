@@ -21,15 +21,18 @@ const MyRexes = () => {
   const [hasRestaurant, setHasRestaurant] = useState(false);
   const {address} = useAccount();
   const { data, isError, isLoading } = useContractRead({
-    address: '0x',
+    address: '0x9377942972FFEe975a57bFd90098ce1f8650Bec7',
     abi: restaurantReviewsAbi,
-    functionName: 'getOwnerRestaurant',
+    functionName: 'getRestaurantByOwner',
     args: [address],
     onError(err) {
-      toast.error('Failed to fetch getOwnerRestaurant()...')
+      console.log("err "+ data.id);
+      console.log(err);
     },
     onSuccess(data) {
       if(data) {
+        console.log(data);
+        console.log(Number(data.id))
         setHasRestaurant(true);
       }
     }
@@ -37,24 +40,23 @@ const MyRexes = () => {
   if (isLoading) return <Spinner/>;
 
 
-  return (
-        <div className="mt-10 max-w-sm rounded overflow-hidden shadow-lg restaurant-card">
-          <div className="px-16 py-10 text-black">
-            {address && (
-              <div className="flex flex-col items-center">
-                <p className="text-xs font-semibold text-white bg-black py-1 px-3 rounded-full mb-2">
-                Hey, {formatAddress(address)} !
-                </p>
-                {hasRestaurant ? (
-                <RestaurantReviewSolo restaurantData={data}/>
-              ) : (
-                <AddRestaurantForm />
-              )}
-              </div>
-            )}
+  return hasRestaurant ? (
+    <RestaurantReviewSolo restaurantId={Number(data.id)} />
+  ) : (
+    <div className="mt-10 max-w-sm rounded overflow-hidden shadow-lg restaurant-card">
+      <div className="px-16 py-10 text-black">
+        {address && (
+          <div className="flex flex-col items-center">
+            <p className="text-xs font-semibold text-white bg-black py-1 px-3 rounded-full mb-2">
+              Hey, {formatAddress(address)}!
+            </p>
+            <AddRestaurantForm />
           </div>
-        </div>
-    );
-};
+        )}
+      </div>
+    </div>
+  );
+}
+  
 
 export default MyRexes;
