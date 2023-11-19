@@ -1,0 +1,2093 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "AlreadyExists",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "uid",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "registerer",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "contract ISchemaResolver",
+              "name": "resolver",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "string",
+              "name": "schema",
+              "type": "string"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct SchemaRecord",
+          "name": "schema",
+          "type": "tuple"
+        }
+      ],
+      "name": "Registered",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "uid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSchema",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "contract ISchemaResolver",
+              "name": "resolver",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            },
+            {
+              "internalType": "string",
+              "name": "schema",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct SchemaRecord",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "schema",
+          "type": "string"
+        },
+        {
+          "internalType": "contract ISchemaResolver",
+          "name": "resolver",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "revocable",
+          "type": "bool"
+        }
+      ],
+      "name": "register",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x60e060405234801561001057600080fd5b506001608052600360a052600060c05260805160a05160c0516108fd61004c600039600060fe0152600060d50152600060ac01526108fd6000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806354fd4d501461004657806360d7a27814610064578063a2ea7c6e14610085575b600080fd5b61004e6100a5565b60405161005b91906105a9565b60405180910390f35b6100776100723660046105c3565b610148565b60405190815260200161005b565b610098610093366004610668565b6102a3565b60405161005b9190610681565b60606100d07f00000000000000000000000000000000000000000000000000000000000000006103ad565b6100f97f00000000000000000000000000000000000000000000000000000000000000006103ad565b6101227f00000000000000000000000000000000000000000000000000000000000000006103ad565b604051602001610134939291906106cc565b604051602081830303815290604052905090565b60008060405180608001604052806000801b8152602001856001600160a01b03168152602001841515815260200187878080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920182905250939094525092935091506101bd905082610440565b600081815260208190526040902054909150156101ed5760405163119b4fd360e11b815260040160405180910390fd5b808252600081815260208181526040918290208451815590840151600182018054938601511515600160a01b026001600160a81b03199094166001600160a01b0390921691909117929092179091556060830151839190600282019061025390826107c5565b50905050336001600160a01b0316817fd0b86852e21f9e5fa4bc3b0cff9757ffe243d50c4b43968a42202153d651ea5e846040516102919190610681565b60405180910390a39695505050505050565b60408051608081018252600080825260208201819052918101919091526060808201526000828152602081815260409182902082516080810184528154815260018201546001600160a01b03811693820193909352600160a01b90920460ff161515928201929092526002820180549192916060840191906103249061073c565b80601f01602080910402602001604051908101604052809291908181526020018280546103509061073c565b801561039d5780601f106103725761010080835404028352916020019161039d565b820191906000526020600020905b81548152906001019060200180831161038057829003601f168201915b5050505050815250509050919050565b606060006103ba83610480565b600101905060008167ffffffffffffffff8111156103da576103da610726565b6040519080825280601f01601f191660200182016040528015610404576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a850494508461040e57509392505050565b600081606001518260200151836040015160405160200161046393929190610885565b604051602081830303815290604052805190602001209050919050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106104bf5772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef810000000083106104eb576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc10000831061050957662386f26fc10000830492506010015b6305f5e1008310610521576305f5e100830492506008015b612710831061053557612710830492506004015b60648310610547576064830492506002015b600a8310610553576001015b92915050565b60005b8381101561057457818101518382015260200161055c565b50506000910152565b60008151808452610595816020860160208601610559565b601f01601f19169290920160200192915050565b6020815260006105bc602083018461057d565b9392505050565b600080600080606085870312156105d957600080fd5b843567ffffffffffffffff808211156105f157600080fd5b818701915087601f83011261060557600080fd5b81358181111561061457600080fd5b88602082850101111561062657600080fd5b602092830196509450508501356001600160a01b038116811461064857600080fd5b91506040850135801515811461065d57600080fd5b939692955090935050565b60006020828403121561067a57600080fd5b5035919050565b602081528151602082015260018060a01b036020830151166040820152604082015115156060820152600060608301516080808401526106c460a084018261057d565b949350505050565b600084516106de818460208901610559565b8083019050601760f91b80825285516106fe816001850160208a01610559565b60019201918201528351610719816002840160208801610559565b0160020195945050505050565b634e487b7160e01b600052604160045260246000fd5b600181811c9082168061075057607f821691505b60208210810361077057634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156107c057600081815260208120601f850160051c8101602086101561079d5750805b601f850160051c820191505b818110156107bc578281556001016107a9565b5050505b505050565b815167ffffffffffffffff8111156107df576107df610726565b6107f3816107ed845461073c565b84610776565b602080601f83116001811461082857600084156108105750858301515b600019600386901b1c1916600185901b1785556107bc565b600085815260208120601f198616915b8281101561085757888601518255948401946001909101908401610838565b50858210156108755787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60008451610897818460208901610559565b60609490941b6bffffffffffffffffffffffff19169190930190815290151560f81b60148201526015019291505056fea26469706673582212204bff41796f2177c24b62552375d5eab3fc0c4e60770760e3531d10b11a3c3b2764736f6c63430008130033",
+    "sourceMap": "344:1436:38:-:0;;;619:32;;;;;;;;;-1:-1:-1;640:1:38;705:14:39;;643:1:38;729:14:39;;646:1:38;753:13:39;;344:1436:38;;;;;;;;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806354fd4d501461004657806360d7a27814610064578063a2ea7c6e14610085575b600080fd5b61004e6100a5565b60405161005b91906105a9565b60405180910390f35b6100776100723660046105c3565b610148565b60405190815260200161005b565b610098610093366004610668565b6102a3565b60405161005b9190610681565b60606100d07f00000000000000000000000000000000000000000000000000000000000000006103ad565b6100f97f00000000000000000000000000000000000000000000000000000000000000006103ad565b6101227f00000000000000000000000000000000000000000000000000000000000000006103ad565b604051602001610134939291906106cc565b604051602081830303815290604052905090565b60008060405180608001604052806000801b8152602001856001600160a01b03168152602001841515815260200187878080601f0160208091040260200160405190810160405280939291908181526020018383808284376000920182905250939094525092935091506101bd905082610440565b600081815260208190526040902054909150156101ed5760405163119b4fd360e11b815260040160405180910390fd5b808252600081815260208181526040918290208451815590840151600182018054938601511515600160a01b026001600160a81b03199094166001600160a01b0390921691909117929092179091556060830151839190600282019061025390826107c5565b50905050336001600160a01b0316817fd0b86852e21f9e5fa4bc3b0cff9757ffe243d50c4b43968a42202153d651ea5e846040516102919190610681565b60405180910390a39695505050505050565b60408051608081018252600080825260208201819052918101919091526060808201526000828152602081815260409182902082516080810184528154815260018201546001600160a01b03811693820193909352600160a01b90920460ff161515928201929092526002820180549192916060840191906103249061073c565b80601f01602080910402602001604051908101604052809291908181526020018280546103509061073c565b801561039d5780601f106103725761010080835404028352916020019161039d565b820191906000526020600020905b81548152906001019060200180831161038057829003601f168201915b5050505050815250509050919050565b606060006103ba83610480565b600101905060008167ffffffffffffffff8111156103da576103da610726565b6040519080825280601f01601f191660200182016040528015610404576020820181803683370190505b5090508181016020015b600019016f181899199a1a9b1b9c1cb0b131b232b360811b600a86061a8153600a850494508461040e57509392505050565b600081606001518260200151836040015160405160200161046393929190610885565b604051602081830303815290604052805190602001209050919050565b60008072184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b83106104bf5772184f03e93ff9f4daa797ed6e38ed64bf6a1f0160401b830492506040015b6d04ee2d6d415b85acef810000000083106104eb576d04ee2d6d415b85acef8100000000830492506020015b662386f26fc10000831061050957662386f26fc10000830492506010015b6305f5e1008310610521576305f5e100830492506008015b612710831061053557612710830492506004015b60648310610547576064830492506002015b600a8310610553576001015b92915050565b60005b8381101561057457818101518382015260200161055c565b50506000910152565b60008151808452610595816020860160208601610559565b601f01601f19169290920160200192915050565b6020815260006105bc602083018461057d565b9392505050565b600080600080606085870312156105d957600080fd5b843567ffffffffffffffff808211156105f157600080fd5b818701915087601f83011261060557600080fd5b81358181111561061457600080fd5b88602082850101111561062657600080fd5b602092830196509450508501356001600160a01b038116811461064857600080fd5b91506040850135801515811461065d57600080fd5b939692955090935050565b60006020828403121561067a57600080fd5b5035919050565b602081528151602082015260018060a01b036020830151166040820152604082015115156060820152600060608301516080808401526106c460a084018261057d565b949350505050565b600084516106de818460208901610559565b8083019050601760f91b80825285516106fe816001850160208a01610559565b60019201918201528351610719816002840160208801610559565b0160020195945050505050565b634e487b7160e01b600052604160045260246000fd5b600181811c9082168061075057607f821691505b60208210810361077057634e487b7160e01b600052602260045260246000fd5b50919050565b601f8211156107c057600081815260208120601f850160051c8101602086101561079d5750805b601f850160051c820191505b818110156107bc578281556001016107a9565b5050505b505050565b815167ffffffffffffffff8111156107df576107df610726565b6107f3816107ed845461073c565b84610776565b602080601f83116001811461082857600084156108105750858301515b600019600386901b1c1916600185901b1785556107bc565b600085815260208120601f198616915b8281101561085757888601518255948401946001909101908401610838565b50858210156108755787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60008451610897818460208901610559565b60609490941b6bffffffffffffffffffffffff19169190930190815290151560f81b60148201526015019291505056fea26469706673582212204bff41796f2177c24b62552375d5eab3fc0c4e60770760e3531d10b11a3c3b2764736f6c63430008130033",
+    "sourceMap": "344:1436:38:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:234:39;;;:::i;:::-;;;;;;;:::i;:::-;;;;;;;;693:598:38;;;;;;:::i;:::-;;:::i;:::-;;;1887:25:61;;;1875:2;1860:18;693:598:38;1741:177:61;1333:114:38;;;;;;:::i;:::-;;:::i;:::-;;;;;;;:::i;890:234:39:-;932:13;1017:24;1034:6;1017:16;:24::i;:::-;1048;1065:6;1048:16;:24::i;:::-;1079:23;1096:5;1079:16;:23::i;:::-;1000:103;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;957:160;;890:234;:::o;693:598:38:-;795:7;814:32;849:146;;;;;;;;138:1:33;881:9:38;;849:146;;;;942:8;-1:-1:-1;;;;;849:146:38;;;;;975:9;849:146;;;;;;912:6;;849:146;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;849:146:38;;;;-1:-1:-1;814:181:38;;-1:-1:-1;849:146:38;-1:-1:-1;1020:21:38;;-1:-1:-1;814:181:38;1020:7;:21::i;:::-;138:1:33;1055:14:38;;;;;;;;;;:18;1006:35;;-1:-1:-1;1055:31:38;1051:84;;1109:15;;-1:-1:-1;;;1109:15:38;;;;;;;;;;;1051:84;1145:22;;;:16;1177:14;;;;;;;;;;;;:29;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;1177:29:38;-1:-1:-1;;;;;;1177:29:38;;;-1:-1:-1;;;;;1177:29:38;;;;;;;;;;;;;;;;;;1145:12;;1177:14;:29;;;;;;;;:::i;:::-;;;;;1238:10;-1:-1:-1;;;;;1222:41:38;1233:3;1222:41;1250:12;1222:41;;;;;;:::i;:::-;;;;;;;;1281:3;693:598;-1:-1:-1;;;;;;693:598:38:o;1333:114::-;-1:-1:-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1426:9:38;:14;;;;;;;;;;;;1419:21;;;;;;;;;;;;;;;-1:-1:-1;;;;;1419:21:38;;;;;;;;;-1:-1:-1;;;1419:21:38;;;;;;;;;;;;;;;;;;;;;1426:14;1419:21;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1333:114;;;:::o;447:696:26:-;503:13;552:14;569:17;580:5;569:10;:17::i;:::-;589:1;569:21;552:38;;604:20;638:6;627:18;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;627:18:26;-1:-1:-1;604:41:26;-1:-1:-1;765:28:26;;;781:2;765:28;820:280;-1:-1:-1;;851:5:26;-1:-1:-1;;;985:2:26;974:14;;969:30;851:5;956:44;1044:2;1035:11;;;-1:-1:-1;1064:21:26;820:280;1064:21;-1:-1:-1;1120:6:26;447:696;-1:-1:-1;;;447:696:26:o;1577:201:38:-;1650:7;1703:12;:19;;;1724:12;:21;;;1747:12;:22;;;1686:84;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;1676:95;;;;;;1669:102;;1577:201;;;:::o;10139:916:30:-;10192:7;;-1:-1:-1;;;10267:17:30;;10263:103;;-1:-1:-1;;;10304:17:30;;;-1:-1:-1;10349:2:30;10339:12;10263:103;10392:8;10383:5;:17;10379:103;;10429:8;10420:17;;;-1:-1:-1;10465:2:30;10455:12;10379:103;10508:8;10499:5;:17;10495:103;;10545:8;10536:17;;;-1:-1:-1;10581:2:30;10571:12;10495:103;10624:7;10615:5;:16;10611:100;;10660:7;10651:16;;;-1:-1:-1;10695:1:30;10685:11;10611:100;10737:7;10728:5;:16;10724:100;;10773:7;10764:16;;;-1:-1:-1;10808:1:30;10798:11;10724:100;10850:7;10841:5;:16;10837:100;;10886:7;10877:16;;;-1:-1:-1;10921:1:30;10911:11;10837:100;10963:7;10954:5;:16;10950:66;;11000:1;10990:11;10950:66;11042:6;10139:916;-1:-1:-1;;10139:916:30:o;14:250:61:-;99:1;109:113;123:6;120:1;117:13;109:113;;;199:11;;;193:18;180:11;;;173:39;145:2;138:10;109:113;;;-1:-1:-1;;256:1:61;238:16;;231:27;14:250::o;269:271::-;311:3;349:5;343:12;376:6;371:3;364:19;392:76;461:6;454:4;449:3;445:14;438:4;431:5;427:16;392:76;:::i;:::-;522:2;501:15;-1:-1:-1;;497:29:61;488:39;;;;529:4;484:50;;269:271;-1:-1:-1;;269:271:61:o;545:220::-;694:2;683:9;676:21;657:4;714:45;755:2;744:9;740:18;732:6;714:45;:::i;:::-;706:53;545:220;-1:-1:-1;;;545:220:61:o;770:966::-;881:6;889;897;905;958:2;946:9;937:7;933:23;929:32;926:52;;;974:1;971;964:12;926:52;1014:9;1001:23;1043:18;1084:2;1076:6;1073:14;1070:34;;;1100:1;1097;1090:12;1070:34;1138:6;1127:9;1123:22;1113:32;;1183:7;1176:4;1172:2;1168:13;1164:27;1154:55;;1205:1;1202;1195:12;1154:55;1245:2;1232:16;1271:2;1263:6;1260:14;1257:34;;;1287:1;1284;1277:12;1257:34;1334:7;1327:4;1318:6;1314:2;1310:15;1306:26;1303:39;1300:59;;;1355:1;1352;1345:12;1300:59;1386:4;1378:13;;;;-1:-1:-1;1410:6:61;-1:-1:-1;;1451:20:61;;1438:34;-1:-1:-1;;;;;1501:31:61;;1491:42;;1481:70;;1547:1;1544;1537:12;1481:70;1570:5;-1:-1:-1;1627:2:61;1612:18;;1599:32;1669:15;;1662:23;1650:36;;1640:64;;1700:1;1697;1690:12;1640:64;770:966;;;;-1:-1:-1;770:966:61;;-1:-1:-1;;770:966:61:o;1923:180::-;1982:6;2035:2;2023:9;2014:7;2010:23;2006:32;2003:52;;;2051:1;2048;2041:12;2003:52;-1:-1:-1;2074:23:61;;1923:180;-1:-1:-1;1923:180:61:o;2108:573::-;2299:2;2288:9;2281:21;2344:6;2338:13;2333:2;2322:9;2318:18;2311:41;2433:1;2429;2424:3;2420:11;2416:19;2410:2;2402:6;2398:15;2392:22;2388:48;2383:2;2372:9;2368:18;2361:76;2505:2;2497:6;2493:15;2487:22;2480:30;2473:38;2468:2;2457:9;2453:18;2446:66;2262:4;2559:2;2551:6;2547:15;2541:22;2601:4;2594;2583:9;2579:20;2572:34;2623:52;2670:3;2659:9;2655:19;2641:12;2623:52;:::i;:::-;2615:60;2108:573;-1:-1:-1;;;;2108:573:61:o;2686:999::-;3115:3;3153:6;3147:13;3169:66;3228:6;3223:3;3216:4;3208:6;3204:17;3169:66;:::i;:::-;3266:6;3261:3;3257:16;3244:29;;-1:-1:-1;;;3318:2:61;3311:5;3304:17;3352:6;3346:13;3368:78;3437:8;3433:1;3426:5;3422:13;3415:4;3407:6;3403:17;3368:78;:::i;:::-;3509:1;3465:20;;3501:10;;;3494:22;3541:13;;3563:75;3541:13;3625:1;3617:10;;3610:4;3598:17;;3563:75;:::i;:::-;3658:17;3677:1;3654:25;;2686:999;-1:-1:-1;;;;;2686:999:61:o;3690:127::-;3751:10;3746:3;3742:20;3739:1;3732:31;3782:4;3779:1;3772:15;3806:4;3803:1;3796:15;3822:380;3901:1;3897:12;;;;3944;;;3965:61;;4019:4;4011:6;4007:17;3997:27;;3965:61;4072:2;4064:6;4061:14;4041:18;4038:38;4035:161;;4118:10;4113:3;4109:20;4106:1;4099:31;4153:4;4150:1;4143:15;4181:4;4178:1;4171:15;4035:161;;3822:380;;;:::o;4333:545::-;4435:2;4430:3;4427:11;4424:448;;;4471:1;4496:5;4492:2;4485:17;4541:4;4537:2;4527:19;4611:2;4599:10;4595:19;4592:1;4588:27;4582:4;4578:38;4647:4;4635:10;4632:20;4629:47;;;-1:-1:-1;4670:4:61;4629:47;4725:2;4720:3;4716:12;4713:1;4709:20;4703:4;4699:31;4689:41;;4780:82;4798:2;4791:5;4788:13;4780:82;;;4843:17;;;4824:1;4813:13;4780:82;;;4784:3;;;4424:448;4333:545;;;:::o;5054:1352::-;5180:3;5174:10;5207:18;5199:6;5196:30;5193:56;;;5229:18;;:::i;:::-;5258:97;5348:6;5308:38;5340:4;5334:11;5308:38;:::i;:::-;5302:4;5258:97;:::i;:::-;5410:4;;5474:2;5463:14;;5491:1;5486:663;;;;6193:1;6210:6;6207:89;;;-1:-1:-1;6262:19:61;;;6256:26;6207:89;-1:-1:-1;;5011:1:61;5007:11;;;5003:24;4999:29;4989:40;5035:1;5031:11;;;4986:57;6309:81;;5456:944;;5486:663;4280:1;4273:14;;;4317:4;4304:18;;-1:-1:-1;;5522:20:61;;;5640:236;5654:7;5651:1;5648:14;5640:236;;;5743:19;;;5737:26;5722:42;;5835:27;;;;5803:1;5791:14;;;;5670:19;;5640:236;;;5644:3;5904:6;5895:7;5892:19;5889:201;;;5965:19;;;5959:26;-1:-1:-1;;6048:1:61;6044:14;;;6060:3;6040:24;6036:37;6032:42;6017:58;6002:74;;5889:201;-1:-1:-1;;;;;6136:1:61;6120:14;;;6116:22;6103:36;;-1:-1:-1;5054:1352:61:o;6543:542::-;6749:3;6787:6;6781:13;6803:66;6862:6;6857:3;6850:4;6842:6;6838:17;6803:66;:::i;:::-;6938:2;6934:15;;;;-1:-1:-1;;6930:53:61;6891:16;;;;6916:68;;;7032:14;;7025:22;7020:3;7016:32;7011:2;7000:14;;6993:56;7076:2;7065:14;;6543:542;-1:-1:-1;;6543:542:61:o",
+    "linkReferences": {},
+    "immutableReferences": {
+      "46247": [
+        {
+          "start": 172,
+          "length": 32
+        }
+      ],
+      "46249": [
+        {
+          "start": 213,
+          "length": 32
+        }
+      ],
+      "46251": [
+        {
+          "start": 254,
+          "length": 32
+        }
+      ]
+    }
+  },
+  "methodIdentifiers": {
+    "getSchema(bytes32)": "a2ea7c6e",
+    "register(string,address,bool)": "60d7a278",
+    "version()": "54fd4d50"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"AlreadyExists\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"registerer\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"contract ISchemaResolver\",\"name\":\"resolver\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"schema\",\"type\":\"string\"}],\"indexed\":false,\"internalType\":\"struct SchemaRecord\",\"name\":\"schema\",\"type\":\"tuple\"}],\"name\":\"Registered\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"getSchema\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"contract ISchemaResolver\",\"name\":\"resolver\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"schema\",\"type\":\"string\"}],\"internalType\":\"struct SchemaRecord\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"schema\",\"type\":\"string\"},{\"internalType\":\"contract ISchemaResolver\",\"name\":\"resolver\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"revocable\",\"type\":\"bool\"}],\"name\":\"register\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"Registered(bytes32,address,(bytes32,address,bool,string))\":{\"params\":{\"registerer\":\"The address of the account used to register the schema.\",\"schema\":\"The schema data.\",\"uid\":\"The schema UID.\"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"Creates a new SchemaRegistry instance.\"},\"getSchema(bytes32)\":{\"params\":{\"uid\":\"The UID of the schema to retrieve.\"},\"returns\":{\"_0\":\"The schema data members.\"}},\"register(string,address,bool)\":{\"params\":{\"resolver\":\"An optional schema resolver.\",\"revocable\":\"Whether the schema allows revocations explicitly.\",\"schema\":\"The schema data schema.\"},\"returns\":{\"_0\":\"The UID of the new schema.\"}},\"version()\":{\"returns\":{\"_0\":\"Semver contract version as a string.\"}}},\"title\":\"SchemaRegistry\",\"version\":1},\"userdoc\":{\"events\":{\"Registered(bytes32,address,(bytes32,address,bool,string))\":{\"notice\":\"Emitted when a new schema has been registered\"}},\"kind\":\"user\",\"methods\":{\"getSchema(bytes32)\":{\"notice\":\"Returns an existing schema by UID\"},\"register(string,address,bool)\":{\"notice\":\"Submits and reserves a new schema\"},\"version()\":{\"notice\":\"Returns the full semver contract version.\"}},\"notice\":\"The global schema registry.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/SchemaRegistry.sol\":\"SchemaRegistry\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"node_modules/@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f\",\"dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n\"]},\"node_modules/@openzeppelin/contracts/utils/math/Math.sol\":{\"keccak256\":\"0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c\",\"dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS\"]},\"node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol\":{\"keccak256\":\"0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7\",\"dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6\"]},\"src/Common.sol\":{\"keccak256\":\"0x957bd2e6d0d6d637f86208b135c29fbaf4412cb08e5e7a61ede16b80561bf685\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da1dc9aedbb1d4d39c46c2235918d3adfbc5741dd34a46010cf425d134e7936d\",\"dweb:/ipfs/QmWUk6bXnLaghS2riF3GTFEeURCzgYFMA5woa6AsgPwEgc\"]},\"src/ISchemaRegistry.sol\":{\"keccak256\":\"0x772b1ebcf3e5c93fecb53762e11bbdae75fcb667deea4ac21134fccfe78326e4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://734ea6ab1e3bea7d8e0d478731c3b8888347ec01601d66d3072398b8984e8517\",\"dweb:/ipfs/QmQHZM7USiV88SUucWV7wwCpURv98dDngtFcsEaEnFwdtp\"]},\"src/SchemaRegistry.sol\":{\"keccak256\":\"0xba2bb65a85b07bd4b0dce71c2603601d264f9fae7f10aa0a90849196df5f2b2a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a019602b09626538eb30f83d02685eaaf415505909e4b8a16f42340e007ccc7b\",\"dweb:/ipfs/QmVurysye7hawXWXUF4e8c54Mch9bjTuj6CX653V24v9rv\"]},\"src/Semver.sol\":{\"keccak256\":\"0x5883c852730b00d73b10475f3b382afce8f30b89f337078ec03a66c463e048a8\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ab7f1cf03a19860d07100bd61a8138346c5682bced5dbc569847d35241ba1fd\",\"dweb:/ipfs/QmfTTnWbarxDZuUCCextgxrTcATy1N1XoPBmFYj2nQZJUG\"]},\"src/resolver/ISchemaResolver.sol\":{\"keccak256\":\"0xb74b64e20b90b35004750d2c78ceb114a304975d22d71bd9a2a9de0d483f0395\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0d0a30499e28e7c4ed62f2d8a88c46623c96830cc23e04ce6e9cd0cd0b11a03d\",\"dweb:/ipfs/QmYWNWu1cn7XDSaFgiMyn2L2coud3DNiGoNrNNo8QYcdyC\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.19+commit.7dd6d404"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "AlreadyExists"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "registerer",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "struct SchemaRecord",
+              "name": "schema",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "contract ISchemaResolver",
+                  "name": "resolver",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "string",
+                  "name": "schema",
+                  "type": "string"
+                }
+              ],
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Registered",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "bytes32",
+              "name": "uid",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getSchema",
+          "outputs": [
+            {
+              "internalType": "struct SchemaRecord",
+              "name": "",
+              "type": "tuple",
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "uid",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "contract ISchemaResolver",
+                  "name": "resolver",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "revocable",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "string",
+                  "name": "schema",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "schema",
+              "type": "string"
+            },
+            {
+              "internalType": "contract ISchemaResolver",
+              "name": "resolver",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "revocable",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "register",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "version",
+          "outputs": [
+            {
+              "internalType": "string",
+              "name": "",
+              "type": "string"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "constructor": {
+            "details": "Creates a new SchemaRegistry instance."
+          },
+          "getSchema(bytes32)": {
+            "params": {
+              "uid": "The UID of the schema to retrieve."
+            },
+            "returns": {
+              "_0": "The schema data members."
+            }
+          },
+          "register(string,address,bool)": {
+            "params": {
+              "resolver": "An optional schema resolver.",
+              "revocable": "Whether the schema allows revocations explicitly.",
+              "schema": "The schema data schema."
+            },
+            "returns": {
+              "_0": "The UID of the new schema."
+            }
+          },
+          "version()": {
+            "returns": {
+              "_0": "Semver contract version as a string."
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "getSchema(bytes32)": {
+            "notice": "Returns an existing schema by UID"
+          },
+          "register(string,address,bool)": {
+            "notice": "Submits and reserves a new schema"
+          },
+          "version()": {
+            "notice": "Returns the full semver contract version."
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/SchemaRegistry.sol": "SchemaRegistry"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+        "keccak256": "0x3088eb2868e8d13d89d16670b5f8612c4ab9ff8956272837d8e90106c59c14a0",
+        "urls": [
+          "bzz-raw://b81d9ff6559ea5c47fc573e17ece6d9ba5d6839e213e6ebc3b4c5c8fe4199d7f",
+          "dweb:/ipfs/QmPCW1bFisUzJkyjroY3yipwfism9RRCigCcK1hbXtVM8n"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+        "keccak256": "0xe4455ac1eb7fc497bb7402579e7b4d64d928b846fce7d2b6fde06d366f21c2b3",
+        "urls": [
+          "bzz-raw://cc8841b3cd48ad125e2f46323c8bad3aa0e88e399ec62acb9e57efa7e7c8058c",
+          "dweb:/ipfs/QmSqE4mXHA2BXW58deDbXE8MTcsL5JSKNDbm23sVQxRLPS"
+        ],
+        "license": "MIT"
+      },
+      "node_modules/@openzeppelin/contracts/utils/math/SignedMath.sol": {
+        "keccak256": "0xf92515413956f529d95977adc9b0567d583c6203fc31ab1c23824c35187e3ddc",
+        "urls": [
+          "bzz-raw://c50fcc459e49a9858b6d8ad5f911295cb7c9ab57567845a250bf0153f84a95c7",
+          "dweb:/ipfs/QmcEW85JRzvDkQggxiBBLVAasXWdkhEysqypj9EaB6H2g6"
+        ],
+        "license": "MIT"
+      },
+      "src/Common.sol": {
+        "keccak256": "0x957bd2e6d0d6d637f86208b135c29fbaf4412cb08e5e7a61ede16b80561bf685",
+        "urls": [
+          "bzz-raw://da1dc9aedbb1d4d39c46c2235918d3adfbc5741dd34a46010cf425d134e7936d",
+          "dweb:/ipfs/QmWUk6bXnLaghS2riF3GTFEeURCzgYFMA5woa6AsgPwEgc"
+        ],
+        "license": "MIT"
+      },
+      "src/ISchemaRegistry.sol": {
+        "keccak256": "0x772b1ebcf3e5c93fecb53762e11bbdae75fcb667deea4ac21134fccfe78326e4",
+        "urls": [
+          "bzz-raw://734ea6ab1e3bea7d8e0d478731c3b8888347ec01601d66d3072398b8984e8517",
+          "dweb:/ipfs/QmQHZM7USiV88SUucWV7wwCpURv98dDngtFcsEaEnFwdtp"
+        ],
+        "license": "MIT"
+      },
+      "src/SchemaRegistry.sol": {
+        "keccak256": "0xba2bb65a85b07bd4b0dce71c2603601d264f9fae7f10aa0a90849196df5f2b2a",
+        "urls": [
+          "bzz-raw://a019602b09626538eb30f83d02685eaaf415505909e4b8a16f42340e007ccc7b",
+          "dweb:/ipfs/QmVurysye7hawXWXUF4e8c54Mch9bjTuj6CX653V24v9rv"
+        ],
+        "license": "MIT"
+      },
+      "src/Semver.sol": {
+        "keccak256": "0x5883c852730b00d73b10475f3b382afce8f30b89f337078ec03a66c463e048a8",
+        "urls": [
+          "bzz-raw://0ab7f1cf03a19860d07100bd61a8138346c5682bced5dbc569847d35241ba1fd",
+          "dweb:/ipfs/QmfTTnWbarxDZuUCCextgxrTcATy1N1XoPBmFYj2nQZJUG"
+        ],
+        "license": "MIT"
+      },
+      "src/resolver/ISchemaResolver.sol": {
+        "keccak256": "0xb74b64e20b90b35004750d2c78ceb114a304975d22d71bd9a2a9de0d483f0395",
+        "urls": [
+          "bzz-raw://0d0a30499e28e7c4ed62f2d8a88c46623c96830cc23e04ce6e9cd0cd0b11a03d",
+          "dweb:/ipfs/QmYWNWu1cn7XDSaFgiMyn2L2coud3DNiGoNrNNo8QYcdyC"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/SchemaRegistry.sol",
+    "id": 46241,
+    "exportedSymbols": {
+      "EMPTY_UID": [
+        43205
+      ],
+      "ISchemaRegistry": [
+        45559
+      ],
+      "ISchemaResolver": [
+        47725
+      ],
+      "SchemaRecord": [
+        45525
+      ],
+      "SchemaRegistry": [
+        46240
+      ],
+      "Semver": [
+        46303
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:1748:38",
+    "nodes": [
+      {
+        "id": 46110,
+        "nodeType": "PragmaDirective",
+        "src": "33:23:38",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "0.8",
+          ".19"
+        ]
+      },
+      {
+        "id": 46112,
+        "nodeType": "ImportDirective",
+        "src": "58:65:38",
+        "nodes": [],
+        "absolutePath": "src/resolver/ISchemaResolver.sol",
+        "file": "./resolver/ISchemaResolver.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46241,
+        "sourceUnit": 47726,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46111,
+              "name": "ISchemaResolver",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 47725,
+              "src": "67:15:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46114,
+        "nodeType": "ImportDirective",
+        "src": "125:41:38",
+        "nodes": [],
+        "absolutePath": "src/Common.sol",
+        "file": "./Common.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46241,
+        "sourceUnit": 43265,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46113,
+              "name": "EMPTY_UID",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 43205,
+              "src": "134:9:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46116,
+        "nodeType": "ImportDirective",
+        "src": "167:38:38",
+        "nodes": [],
+        "absolutePath": "src/Semver.sol",
+        "file": "./Semver.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46241,
+        "sourceUnit": 46304,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46115,
+              "name": "Semver",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 46303,
+              "src": "176:6:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46119,
+        "nodeType": "ImportDirective",
+        "src": "206:70:38",
+        "nodes": [],
+        "absolutePath": "src/ISchemaRegistry.sol",
+        "file": "./ISchemaRegistry.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 46241,
+        "sourceUnit": 45560,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 46117,
+              "name": "ISchemaRegistry",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45559,
+              "src": "215:15:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          },
+          {
+            "foreign": {
+              "id": 46118,
+              "name": "SchemaRecord",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 45525,
+              "src": "232:12:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 46240,
+        "nodeType": "ContractDefinition",
+        "src": "344:1436:38",
+        "nodes": [
+          {
+            "id": 46126,
+            "nodeType": "ErrorDefinition",
+            "src": "401:22:38",
+            "nodes": [],
+            "errorSelector": "23369fa6",
+            "name": "AlreadyExists",
+            "nameLocation": "407:13:38",
+            "parameters": {
+              "id": 46125,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "420:2:38"
+            }
+          },
+          {
+            "id": 46131,
+            "nodeType": "VariableDeclaration",
+            "src": "493:67:38",
+            "nodes": [],
+            "constant": false,
+            "mutability": "mutable",
+            "name": "_registry",
+            "nameLocation": "551:9:38",
+            "scope": 46240,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_SchemaRecord_$45525_storage_$",
+              "typeString": "mapping(bytes32 => struct SchemaRecord)"
+            },
+            "typeName": {
+              "id": 46130,
+              "keyName": "uid",
+              "keyNameLocation": "509:3:38",
+              "keyType": {
+                "id": 46127,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "501:7:38",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "493:49:38",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_SchemaRecord_$45525_storage_$",
+                "typeString": "mapping(bytes32 => struct SchemaRecord)"
+              },
+              "valueName": "schemaRecord",
+              "valueNameLocation": "529:12:38",
+              "valueType": {
+                "id": 46129,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 46128,
+                  "name": "SchemaRecord",
+                  "nameLocations": [
+                    "516:12:38"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 45525,
+                  "src": "516:12:38"
+                },
+                "referencedDeclaration": 45525,
+                "src": "516:12:38",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage_ptr",
+                  "typeString": "struct SchemaRecord"
+                }
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "id": 46141,
+            "nodeType": "FunctionDefinition",
+            "src": "619:32:38",
+            "nodes": [],
+            "body": {
+              "id": 46140,
+              "nodeType": "Block",
+              "src": "649:2:38",
+              "nodes": [],
+              "statements": []
+            },
+            "documentation": {
+              "id": 46132,
+              "nodeType": "StructuredDocumentation",
+              "src": "567:47:38",
+              "text": "@dev Creates a new SchemaRegistry instance."
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "hexValue": "31",
+                    "id": 46135,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "640:1:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_1_by_1",
+                      "typeString": "int_const 1"
+                    },
+                    "value": "1"
+                  },
+                  {
+                    "hexValue": "33",
+                    "id": 46136,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "643:1:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_3_by_1",
+                      "typeString": "int_const 3"
+                    },
+                    "value": "3"
+                  },
+                  {
+                    "hexValue": "30",
+                    "id": 46137,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "number",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "646:1:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_rational_0_by_1",
+                      "typeString": "int_const 0"
+                    },
+                    "value": "0"
+                  }
+                ],
+                "id": 46138,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 46134,
+                  "name": "Semver",
+                  "nameLocations": [
+                    "633:6:38"
+                  ],
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 46303,
+                  "src": "633:6:38"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "633:15:38"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 46133,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "630:2:38"
+            },
+            "returnParameters": {
+              "id": 46139,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "649:0:38"
+            },
+            "scope": 46240,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 46203,
+            "nodeType": "FunctionDefinition",
+            "src": "693:598:38",
+            "nodes": [],
+            "body": {
+              "id": 46202,
+              "nodeType": "Block",
+              "src": "804:487:38",
+              "nodes": [],
+              "statements": [
+                {
+                  "assignments": [
+                    46156
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 46156,
+                      "mutability": "mutable",
+                      "name": "schemaRecord",
+                      "nameLocation": "834:12:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 46202,
+                      "src": "814:32:38",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                        "typeString": "struct SchemaRecord"
+                      },
+                      "typeName": {
+                        "id": 46155,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 46154,
+                          "name": "SchemaRecord",
+                          "nameLocations": [
+                            "814:12:38"
+                          ],
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 45525,
+                          "src": "814:12:38"
+                        },
+                        "referencedDeclaration": 45525,
+                        "src": "814:12:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage_ptr",
+                          "typeString": "struct SchemaRecord"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 46163,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 46158,
+                        "name": "EMPTY_UID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 43205,
+                        "src": "881:9:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "id": 46159,
+                        "name": "schema",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46144,
+                        "src": "912:6:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      {
+                        "id": 46160,
+                        "name": "resolver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46147,
+                        "src": "942:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                          "typeString": "contract ISchemaResolver"
+                        }
+                      },
+                      {
+                        "id": 46161,
+                        "name": "revocable",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46149,
+                        "src": "975:9:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        },
+                        {
+                          "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                          "typeString": "contract ISchemaResolver"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 46157,
+                      "name": "SchemaRecord",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45525,
+                      "src": "849:12:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_SchemaRecord_$45525_storage_ptr_$",
+                        "typeString": "type(struct SchemaRecord storage pointer)"
+                      }
+                    },
+                    "id": 46162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "nameLocations": [
+                      "876:3:38",
+                      "904:6:38",
+                      "932:8:38",
+                      "964:9:38"
+                    ],
+                    "names": [
+                      "uid",
+                      "schema",
+                      "resolver",
+                      "revocable"
+                    ],
+                    "nodeType": "FunctionCall",
+                    "src": "849:146:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                      "typeString": "struct SchemaRecord memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "814:181:38"
+                },
+                {
+                  "assignments": [
+                    46165
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 46165,
+                      "mutability": "mutable",
+                      "name": "uid",
+                      "nameLocation": "1014:3:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 46202,
+                      "src": "1006:11:38",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      },
+                      "typeName": {
+                        "id": 46164,
+                        "name": "bytes32",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1006:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 46169,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 46167,
+                        "name": "schemaRecord",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46156,
+                        "src": "1028:12:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                          "typeString": "struct SchemaRecord memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                          "typeString": "struct SchemaRecord memory"
+                        }
+                      ],
+                      "id": 46166,
+                      "name": "_getUID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46239,
+                      "src": "1020:7:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_SchemaRecord_$45525_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (struct SchemaRecord memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 46168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1020:21:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1006:35:38"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    },
+                    "id": 46175,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 46170,
+                          "name": "_registry",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 46131,
+                          "src": "1055:9:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_SchemaRecord_$45525_storage_$",
+                            "typeString": "mapping(bytes32 => struct SchemaRecord storage ref)"
+                          }
+                        },
+                        "id": 46172,
+                        "indexExpression": {
+                          "id": 46171,
+                          "name": "uid",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 46165,
+                          "src": "1065:3:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1055:14:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage",
+                          "typeString": "struct SchemaRecord storage ref"
+                        }
+                      },
+                      "id": 46173,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberLocation": "1070:3:38",
+                      "memberName": "uid",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 45517,
+                      "src": "1055:18:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "id": 46174,
+                      "name": "EMPTY_UID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 43205,
+                      "src": "1077:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1055:31:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 46180,
+                  "nodeType": "IfStatement",
+                  "src": "1051:84:38",
+                  "trueBody": {
+                    "id": 46179,
+                    "nodeType": "Block",
+                    "src": "1088:47:38",
+                    "statements": [
+                      {
+                        "errorCall": {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 46176,
+                            "name": "AlreadyExists",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 46126,
+                            "src": "1109:13:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 46177,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1109:15:38",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 46178,
+                        "nodeType": "RevertStatement",
+                        "src": "1102:22:38"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "id": 46185,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "id": 46181,
+                        "name": "schemaRecord",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46156,
+                        "src": "1145:12:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                          "typeString": "struct SchemaRecord memory"
+                        }
+                      },
+                      "id": 46183,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberLocation": "1158:3:38",
+                      "memberName": "uid",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 45517,
+                      "src": "1145:16:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 46184,
+                      "name": "uid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46165,
+                      "src": "1164:3:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1145:22:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 46186,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1145:22:38"
+                },
+                {
+                  "expression": {
+                    "id": 46191,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 46187,
+                        "name": "_registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46131,
+                        "src": "1177:9:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_SchemaRecord_$45525_storage_$",
+                          "typeString": "mapping(bytes32 => struct SchemaRecord storage ref)"
+                        }
+                      },
+                      "id": 46189,
+                      "indexExpression": {
+                        "id": 46188,
+                        "name": "uid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46165,
+                        "src": "1187:3:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1177:14:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage",
+                        "typeString": "struct SchemaRecord storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 46190,
+                      "name": "schemaRecord",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46156,
+                      "src": "1194:12:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                        "typeString": "struct SchemaRecord memory"
+                      }
+                    },
+                    "src": "1177:29:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage",
+                      "typeString": "struct SchemaRecord storage ref"
+                    }
+                  },
+                  "id": 46192,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1177:29:38"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 46194,
+                        "name": "uid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46165,
+                        "src": "1233:3:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "expression": {
+                          "id": 46195,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": -15,
+                          "src": "1238:3:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 46196,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberLocation": "1242:6:38",
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "1238:10:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 46197,
+                        "name": "schemaRecord",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 46156,
+                        "src": "1250:12:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                          "typeString": "struct SchemaRecord memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                          "typeString": "struct SchemaRecord memory"
+                        }
+                      ],
+                      "id": 46193,
+                      "name": "Registered",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 45536,
+                      "src": "1222:10:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$_t_address_$_t_struct$_SchemaRecord_$45525_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes32,address,struct SchemaRecord memory)"
+                      }
+                    },
+                    "id": 46198,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1222:41:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 46199,
+                  "nodeType": "EmitStatement",
+                  "src": "1217:46:38"
+                },
+                {
+                  "expression": {
+                    "id": 46200,
+                    "name": "uid",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 46165,
+                    "src": "1281:3:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 46153,
+                  "id": 46201,
+                  "nodeType": "Return",
+                  "src": "1274:10:38"
+                }
+              ]
+            },
+            "baseFunctions": [
+              45549
+            ],
+            "documentation": {
+              "id": 46142,
+              "nodeType": "StructuredDocumentation",
+              "src": "657:31:38",
+              "text": "@inheritdoc ISchemaRegistry"
+            },
+            "functionSelector": "60d7a278",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "register",
+            "nameLocation": "702:8:38",
+            "parameters": {
+              "id": 46150,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46144,
+                  "mutability": "mutable",
+                  "name": "schema",
+                  "nameLocation": "727:6:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46203,
+                  "src": "711:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 46143,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "711:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46147,
+                  "mutability": "mutable",
+                  "name": "resolver",
+                  "nameLocation": "751:8:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46203,
+                  "src": "735:24:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                    "typeString": "contract ISchemaResolver"
+                  },
+                  "typeName": {
+                    "id": 46146,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 46145,
+                      "name": "ISchemaResolver",
+                      "nameLocations": [
+                        "735:15:38"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 47725,
+                      "src": "735:15:38"
+                    },
+                    "referencedDeclaration": 47725,
+                    "src": "735:15:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                      "typeString": "contract ISchemaResolver"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46149,
+                  "mutability": "mutable",
+                  "name": "revocable",
+                  "nameLocation": "766:9:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46203,
+                  "src": "761:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 46148,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "761:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "710:66:38"
+            },
+            "returnParameters": {
+              "id": 46153,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46152,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46203,
+                  "src": "795:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 46151,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "795:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "794:9:38"
+            },
+            "scope": 46240,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 46217,
+            "nodeType": "FunctionDefinition",
+            "src": "1333:114:38",
+            "nodes": [],
+            "body": {
+              "id": 46216,
+              "nodeType": "Block",
+              "src": "1409:38:38",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "baseExpression": {
+                      "id": 46212,
+                      "name": "_registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46131,
+                      "src": "1426:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_SchemaRecord_$45525_storage_$",
+                        "typeString": "mapping(bytes32 => struct SchemaRecord storage ref)"
+                      }
+                    },
+                    "id": 46214,
+                    "indexExpression": {
+                      "id": 46213,
+                      "name": "uid",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46206,
+                      "src": "1436:3:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1426:14:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage",
+                      "typeString": "struct SchemaRecord storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 46211,
+                  "id": 46215,
+                  "nodeType": "Return",
+                  "src": "1419:21:38"
+                }
+              ]
+            },
+            "baseFunctions": [
+              45558
+            ],
+            "documentation": {
+              "id": 46204,
+              "nodeType": "StructuredDocumentation",
+              "src": "1297:31:38",
+              "text": "@inheritdoc ISchemaRegistry"
+            },
+            "functionSelector": "a2ea7c6e",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSchema",
+            "nameLocation": "1342:9:38",
+            "parameters": {
+              "id": 46207,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46206,
+                  "mutability": "mutable",
+                  "name": "uid",
+                  "nameLocation": "1360:3:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46217,
+                  "src": "1352:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 46205,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1352:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1351:13:38"
+            },
+            "returnParameters": {
+              "id": 46211,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46210,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46217,
+                  "src": "1388:19:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                    "typeString": "struct SchemaRecord"
+                  },
+                  "typeName": {
+                    "id": 46209,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 46208,
+                      "name": "SchemaRecord",
+                      "nameLocations": [
+                        "1388:12:38"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 45525,
+                      "src": "1388:12:38"
+                    },
+                    "referencedDeclaration": 45525,
+                    "src": "1388:12:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage_ptr",
+                      "typeString": "struct SchemaRecord"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1387:21:38"
+            },
+            "scope": 46240,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 46239,
+            "nodeType": "FunctionDefinition",
+            "src": "1577:201:38",
+            "nodes": [],
+            "body": {
+              "id": 46238,
+              "nodeType": "Block",
+              "src": "1659:119:38",
+              "nodes": [],
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "expression": {
+                              "id": 46229,
+                              "name": "schemaRecord",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 46221,
+                              "src": "1703:12:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                                "typeString": "struct SchemaRecord memory"
+                              }
+                            },
+                            "id": 46230,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1716:6:38",
+                            "memberName": "schema",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 45524,
+                            "src": "1703:19:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            }
+                          },
+                          {
+                            "expression": {
+                              "id": 46231,
+                              "name": "schemaRecord",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 46221,
+                              "src": "1724:12:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                                "typeString": "struct SchemaRecord memory"
+                              }
+                            },
+                            "id": 46232,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1737:8:38",
+                            "memberName": "resolver",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 45520,
+                            "src": "1724:21:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                              "typeString": "contract ISchemaResolver"
+                            }
+                          },
+                          {
+                            "expression": {
+                              "id": 46233,
+                              "name": "schemaRecord",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 46221,
+                              "src": "1747:12:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                                "typeString": "struct SchemaRecord memory"
+                              }
+                            },
+                            "id": 46234,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberLocation": "1760:9:38",
+                            "memberName": "revocable",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 45522,
+                            "src": "1747:22:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_string_memory_ptr",
+                              "typeString": "string memory"
+                            },
+                            {
+                              "typeIdentifier": "t_contract$_ISchemaResolver_$47725",
+                              "typeString": "contract ISchemaResolver"
+                            },
+                            {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          ],
+                          "expression": {
+                            "id": 46227,
+                            "name": "abi",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": -1,
+                            "src": "1686:3:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_abi",
+                              "typeString": "abi"
+                            }
+                          },
+                          "id": 46228,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberLocation": "1690:12:38",
+                          "memberName": "encodePacked",
+                          "nodeType": "MemberAccess",
+                          "src": "1686:16:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_abiencodepacked_pure$__$returns$_t_bytes_memory_ptr_$",
+                            "typeString": "function () pure returns (bytes memory)"
+                          }
+                        },
+                        "id": 46235,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "nameLocations": [],
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1686:84:38",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "id": 46226,
+                      "name": "keccak256",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -8,
+                      "src": "1676:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes memory) pure returns (bytes32)"
+                      }
+                    },
+                    "id": 46236,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "nameLocations": [],
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1676:95:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 46225,
+                  "id": 46237,
+                  "nodeType": "Return",
+                  "src": "1669:102:38"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 46218,
+              "nodeType": "StructuredDocumentation",
+              "src": "1453:119:38",
+              "text": "@dev Calculates a UID for a given schema.\n @param schemaRecord The input schema.\n @return schema UID."
+            },
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_getUID",
+            "nameLocation": "1586:7:38",
+            "parameters": {
+              "id": 46222,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46221,
+                  "mutability": "mutable",
+                  "name": "schemaRecord",
+                  "nameLocation": "1614:12:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46239,
+                  "src": "1594:32:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SchemaRecord_$45525_memory_ptr",
+                    "typeString": "struct SchemaRecord"
+                  },
+                  "typeName": {
+                    "id": 46220,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 46219,
+                      "name": "SchemaRecord",
+                      "nameLocations": [
+                        "1594:12:38"
+                      ],
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 45525,
+                      "src": "1594:12:38"
+                    },
+                    "referencedDeclaration": 45525,
+                    "src": "1594:12:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SchemaRecord_$45525_storage_ptr",
+                      "typeString": "struct SchemaRecord"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1593:34:38"
+            },
+            "returnParameters": {
+              "id": 46225,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 46224,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 46239,
+                  "src": "1650:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 46223,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1650:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1649:9:38"
+            },
+            "scope": 46240,
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 46121,
+              "name": "ISchemaRegistry",
+              "nameLocations": [
+                "371:15:38"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 45559,
+              "src": "371:15:38"
+            },
+            "id": 46122,
+            "nodeType": "InheritanceSpecifier",
+            "src": "371:15:38"
+          },
+          {
+            "baseName": {
+              "id": 46123,
+              "name": "Semver",
+              "nameLocations": [
+                "388:6:38"
+              ],
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 46303,
+              "src": "388:6:38"
+            },
+            "id": 46124,
+            "nodeType": "InheritanceSpecifier",
+            "src": "388:6:38"
+          }
+        ],
+        "canonicalName": "SchemaRegistry",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 46120,
+          "nodeType": "StructuredDocumentation",
+          "src": "278:66:38",
+          "text": "@title SchemaRegistry\n @notice The global schema registry."
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          46240,
+          46303,
+          45559
+        ],
+        "name": "SchemaRegistry",
+        "nameLocation": "353:14:38",
+        "scope": 46241,
+        "usedErrors": [
+          46126
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 38
+}
