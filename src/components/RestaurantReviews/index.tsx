@@ -100,7 +100,7 @@ const RestaurantReviews = () => {
         {
         data1.map(review => {
             return (
-                <Review key="1" data={review}/>
+                <Review key="1" data={review} restaurantName={data[1]}/>
             )
         })
     }

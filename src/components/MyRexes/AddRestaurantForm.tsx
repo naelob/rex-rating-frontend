@@ -9,7 +9,7 @@ import { restaurantReviewsAbi } from '../../utils/abis/restaurantReviewsAbi';
 async function getCoordinates(address: string): Promise<{ lat: string, lng: string}> {
     // Use your geocoding service here
     // Example with Google Geocoding API (replace with your actual API call)
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=YOUR_API_KEY`);
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${import.meta.env.VITE_MAPS_API_KEY}`);
     const data = await response.json();
     if (data.status === "OK") {
       return data.results[0].geometry.location; // { lat: ..., lng: ... }

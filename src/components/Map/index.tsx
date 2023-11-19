@@ -1,26 +1,58 @@
-import React from 'react';
-import {
-  MapContainer,
-  TileLayer,
-  useMap,
-  Marker,
-  Popup
-} from 'react-leaflet'
+import React, { useState } from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { RestaurantType } from '../../utils/types';
+import { useContractRead } from 'wagmi';
+import { restaurantReviewsAbi } from '../../utils/abis/restaurantReviewsAbi';
+import toast from 'react-hot-toast';
 
-const MapComponent: React.FC = () => {
-  return (
-    <MapContainer className='map-container' center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-    <TileLayer
-      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    />
-    <Marker position={[51.505, -0.09]}>
-      <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
-      </Popup>
-  </Marker>
-</MapContainer>
-  );
+const containerStyle = {
+  width: '800px',
+  height: '450px'
 };
 
-export default MapComponent;
+const center = {
+  lat:  41.032830,
+  lng: 28.983250
+};
+
+const MyMapComponent = () => {
+  const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
+    const { data, isError, isLoading } = useContractRead({
+        address: '0x9377942972FFEe975a57bFd90098ce1f8650Bec7',
+        abi: restaurantReviewsAbi,
+        functionName: 'getRestaurants',
+        onSuccess(data) {
+            console.log('Success', data as RestaurantType[])
+            setRestaurants(data as RestaurantType[])
+        },
+        onError(error) {
+            console.log('Error', error)
+            toast.error("An error occurred while fetching data.");
+        },
+    })
+    const locations = [
+      { lat: 41.032830, lng: 28.983250 },
+      { lat: 21.291, lng: -157.821 },
+      { lat: -18.142, lng: 178.431 },
+      { lat: -27.467, lng: 153.027 },
+      // Add as many locations as you like
+    ];
+    
+  return (
+    <LoadScript
+      googleMapsApiKey={import.meta.env.VITE_MAPS_API_KEY} // Replace with your API key
+    >
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={10}
+      >
+        {locations.map((location, index) => (
+          <Marker key={index} position={location} />
+        ))}
+      </GoogleMap>
+    </LoadScript>
+  )
+}
+
+export default React.memo(MyMapComponent);

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router for navigation
 import { formatAddress } from '../../utils';
+import LensShare from '../LensShare';
 
 const Review = ({
-    data
+    data,
+    restaurantName
 }) => {
     
   return (
@@ -31,9 +33,7 @@ const Review = ({
         </div>
         <div className="flex items-center p-4">
         
-            <button className="ml-auto flex items-center px-4 py-2 border rounded text-sm font-medium border-purple-200 text-purple-700 bg-purple-50 hover:bg-purple-100">
-                Share on Lens
-            </button>
+            <LensShare restaurantName={restaurantName}/>
         </div>
     </div>
 </div>
